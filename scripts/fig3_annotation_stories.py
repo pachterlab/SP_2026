@@ -4,7 +4,7 @@ from pathlib import Path
 import hashlib
 import json
 import os
-os.environ.setdefault('MPLCONFIGDIR',str(Path(__file__).resolve().parents[1]/'figure3_annotation/.cache/matplotlib'))
+os.environ.setdefault('MPLCONFIGDIR',str(Path(__file__).resolve().parents[1]/'results/figure3/.cache/matplotlib'))
 import numpy as np
 import pandas as pd
 from figure_style import ROOT,plt,set_style,save
@@ -12,13 +12,14 @@ from matplotlib.path import Path as PlotPath
 from matplotlib.patches import PathPatch,Rectangle,ConnectionPatch
 from matplotlib.lines import Line2D
 
-BASE=ROOT/'figure3_annotation'
+BASE=ROOT/'results/figure3'
 PCA=BASE/'cellsieve30_300s/cortex_pca/pca_visualization.npz'
-GREEN,ORANGE,GRAY='#56a582','#bd5366','#9ba8b0'
+# Cortex outcomes use green/red; Zhengmix settings use blue/orange/purple/gold.
+RECOVERED,ERROR,MISSED='#56A582','#C43C4E','#B4B8BD'
 SCREEN=BASE/'Zhengmix4eq_single_pass_grid_60genes'
 ITER=BASE/'Zhengmix4eq_three_pass_60genes'
 NOISE=BASE/'noise_benchmark/results/cortex_reference'
-BLUE='#266a9e'
+COHORT='#59636E'
 TITLE_SIZE=18
 PANEL_TITLE_SIZE=14
 
@@ -38,11 +39,11 @@ def noise_alluvial(ax,counts,before,after):
     """One count-proportional diagram: full cohort -> noise status -> outcomes."""
     total=counts['total_cells'];unit=.55/total;width=.022
     assert counts['poisoned']+counts['clean']==total
-    outcomes=[('Restored to reference',counts['recovered'],GREEN,'poisoned'),
-              ('Changed to another wrong label',counts['wrong_fix'],ORANGE,'poisoned'),
-              ('Missed injected error',counts['poison_missed'],GRAY,'poisoned'),
-              ('Changed away from reference',counts['clean_flagged'],ORANGE,'clean'),
-              ('Unchanged',counts['clean_unflagged'],GREEN,'clean')]
+    outcomes=[('Restored to reference',counts['recovered'],RECOVERED,'poisoned'),
+              ('Changed to another wrong label',counts['wrong_fix'],ERROR,'poisoned'),
+              ('Missed injected error',counts['poison_missed'],ERROR,'poisoned'),
+              ('Changed away from reference',counts['clean_flagged'],ERROR,'clean'),
+              ('Unchanged',counts['clean_unflagged'],RECOVERED,'clean')]
     assert sum(x[1] for x in outcomes)==total
     def ribbon(x0,y0,x1,y1,h,color):
         mid=(x0+x1)/2
@@ -52,12 +53,12 @@ def noise_alluvial(ax,counts,before,after):
                *([PlotPath.CURVE4]*3),PlotPath.CLOSEPOLY]
         ax.add_patch(PathPatch(PlotPath(verts,codes),facecolor=color,alpha=.43,edgecolor='none'))
     xs=[.04,.38,.70];source_bottom=.20
-    ax.add_patch(Rectangle((xs[0],source_bottom),width,.55,color=BLUE,lw=0))
+    ax.add_patch(Rectangle((xs[0],source_bottom),width,.55,color=COHORT,lw=0))
     middle={};top=.88
     for cohort in ['poisoned','clean']:
         h=counts[cohort]*unit;middle[cohort]=top-h;top-=h+.11
     source_top=source_bottom+.55
-    for cohort,color,label in [('poisoned',ORANGE,'Injected-error cells'),('clean',BLUE,'Originally clean cells')]:
+    for cohort,color,label in [('poisoned',ERROR,'Injected-error cells'),('clean',RECOVERED,'Originally clean cells')]:
         h=counts[cohort]*unit;source_top-=h
         ribbon(xs[0]+width,source_top,xs[1],middle[cohort],h,color)
         ax.add_patch(Rectangle((xs[1],middle[cohort]),width,h,color=color,lw=0))
@@ -150,14 +151,12 @@ def main():
     centers=(edges[:-1]+edges[1:])/2
     assert values.sum()==len(centroid)
     assert values[centers>0].sum()==closer
-    colors=np.where(centers>0,GREEN,ORANGE)
+    colors=np.where(centers>0,RECOVERED,'#767676')
     centroid_ax.bar(centers,values,width=np.diff(edges)*.95,color=colors,edgecolor='none')
     centroid_ax.axvline(0,color='.3',lw=1,ls='--')
     centroid_ax.set(xlim=(-bound,bound),xlabel=r'$d_{\mathrm{original}} - d_{\mathrm{assigned}}$',ylabel='Reassigned cells')
-    centroid_ax.set_ylim(0,max(values)*1.7)
+    centroid_ax.set_ylim(0,max(values)*1.15)
     centroid_ax.set_xticks([-2,-1,0,1,2])
-    centroid_ax.text(.03,.96,f'Reference center closer\n{original_closer:,}',transform=centroid_ax.transAxes,va='top',color=ORANGE,fontsize=14)
-    centroid_ax.text(.03,.79,f'CellSieve center closer\n{closer:,}',transform=centroid_ax.transAxes,va='top',color=GREEN,fontsize=14)
     clean(centroid_ax);panel(centroid_ax,'B','Proximity of reassigned cells\nto PCA centroids (B6J cortex)')
     # Place the short arrow after the rendered first line of the branch label.
     fig.canvas.draw()
@@ -174,13 +173,13 @@ def main():
     end=fig.transFigure.inverted().transform((arrow_x+22*point,arrow_y))
     connector=ConnectionPatch(xyA=start,coordsA=fig.transFigure,
         xyB=end,coordsB=fig.transFigure,arrowstyle='-|>',
-        mutation_scale=13,lw=1.8,color=ORANGE,clip_on=False,shrinkA=0,shrinkB=0)
+        mutation_scale=13,lw=1.8,color=ERROR,clip_on=False,shrinkA=0,shrinkB=0)
     fig.add_artist(connector)
     noise_ax.add_patch(Rectangle((changed_anchor[0]-.03,changed_anchor[1]-.045),.055,.09,
-        fill=False,edgecolor=ORANGE,lw=1.5,zorder=5))
+        fill=False,edgecolor=ERROR,lw=1.5,zorder=5))
 
     pairs=[(20,10),(20,30),(30,10),(30,30)]
-    colors=['#266a9e','#ca7425','#56a582','#9467a4'];markers=['o','s','^','D']
+    colors=['#266A9E','#CA7425','#9467A4','#B79A20'];markers=['o','s','^','D']
     for ax,metric,title,letter in zip(screen_axes,['accuracy','macro_f1'],
         ['Accuracy before and after refinement\n(Zhengmix4eq)',
          'Macro-F1 before and after refinement\n(Zhengmix4eq)'],'CD'):
@@ -216,7 +215,7 @@ def main():
     screen_axes[1].legend(handles,labels,loc='center left',bbox_to_anchor=(1.035,.5),
                      ncol=1,frameon=False,fontsize=12,borderaxespad=0,labelspacing=1.1,
                      handlelength=1.8,handletextpad=.6)
-    save(fig,'figure3_annotation/figures','Figure3')
+    save(fig,'results/figure3/exports','Figure3')
     results=BASE/'results';results.mkdir(exist_ok=True)
     pd.DataFrame(dict(bin_left=edges[:-1],bin_right=edges[1:],cell_count=values,closer_center=np.where(centers>0,'assigned','original'))).to_csv(results/'figure3_centroid_histogram.csv',index=False)
     grid.to_csv(results/'figure3_unsupervised_screen.csv',index=False)
@@ -224,7 +223,7 @@ def main():
     pd.DataFrame([dict(counts,accuracy_before=before.mean(),accuracy_after=after.mean())]).to_csv(results/'figure3_noise_counts.csv',index=False)
     centroid.assign(distance_advantage=distance_delta).to_csv(results/'figure3_centroid_distances.csv')
     (results/'figure3_centroid_summary.json').write_text(json.dumps(centroid_summary,indent=2)+'\n')
-    paths=[SCREEN/'config.json',ITER/'config.json',PCA,BASE/'cellsieve30_300s/cortex_pca/pca_method.json',truth_path,flags_path,centroid_path,NOISE.parent.parent/'scripts/source/poison_expt.py',NOISE/'targeted_alluvial_counts.csv',SCREEN/'results/many_to_one_metrics.csv',ITER/'results/metrics.csv']
+    paths=[SCREEN/'config.json',ITER/'config.json',PCA,BASE/'cellsieve30_300s/cortex_pca/pca_method.json',truth_path,flags_path,centroid_path,ROOT/'scripts/figure3/noise_source/poison_expt.py',NOISE/'targeted_alluvial_counts.csv',SCREEN/'results/many_to_one_metrics.csv',ITER/'results/metrics.csv']
     (results/'figure3_provenance.json').write_text(json.dumps(dict(models_refitted_by_renderer=False,umap_used=False,displayed_passes=[0,1,2,3],
         inputs={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},
         script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),

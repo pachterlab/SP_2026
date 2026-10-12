@@ -14,15 +14,16 @@ import json
 import os
 import re
 import subprocess
+import shutil
+import tempfile
 import sys
 import pandas as pd
 from figure_style import ROOT, plt, set_style, save, METHODS as METHOD_STYLE
 from workspace_paths import CELLSIEVE, local_path
 
-NATIVE = ROOT / 'figure1_method_benchmark/native'
-FIGURE = ROOT / 'figure1_method_benchmark'
-METHODS_PDF = FIGURE / 'CellSieve_ Combinatorially compressed gene sets from scRNAseq data - Google Slides.pdf'
-METHODS_IMAGE = FIGURE / 'figures/methods_layout_source.png'
+NATIVE = ROOT / 'results/figure1/native'
+FIGURE = ROOT / 'results/figure1'
+METHODS_PDF = ROOT / 'assets/methods.pdf'
 DATA = ROOT / 'h5ads/B6J_CortexHippocampus_subset.h5ad'
 METHODS = ('cell_sieve', 'nsforest', 'scgenefit',
            'logistic_regression_de', 'l1_regularization', 'comet')
@@ -63,7 +64,7 @@ def validate_table(table, run, manifest):
         if len(rows) != len(expected) or set(rows.requested_panel_size.astype(str)) != expected:
             raise ValueError('Incomplete or duplicated panel grid: ' + method)
         for row in rows.itertuples():
-            output = Path(row.output_dir).resolve()
+            output = local_path(row.output_dir)
             if not output.is_relative_to(run.resolve()):
                 raise ValueError('Cannot merge outputs from another run')
             if row.status != 'ok':
@@ -95,18 +96,18 @@ def preflight():
         raise RuntimeError('Figure 1 requires its own physical native runtime directory')
     for relative in ['scripts/run.sh', 'scripts/benchmark_execution.py', 'scripts/panel_adapters.py',
                      'scripts/run_comet_native.py', 'vendor_manifest.json', '.venv_comet/bin/python']:
-        if not (NATIVE / relative).exists(): raise FileNotFoundError(NATIVE / relative)
-    for path in [DATA, CELLSIEVE, METHODS_PDF, METHODS_IMAGE]:
+        if not (ROOT / 'scripts/native' / relative).exists(): raise FileNotFoundError(ROOT / 'scripts/native' / relative)
+    for path in [DATA, CELLSIEVE, METHODS_PDF]:
         if not path.is_file(): raise FileNotFoundError(path)
     env = os.environ.copy(); env['PYTHONDONTWRITEBYTECODE'] = '1'
     env['MPLCONFIGDIR'] = str(NATIVE / '.cache/matplotlib')
-    subprocess.run([str(NATIVE / '.venv_comet/bin/python'), '-B', '-c',
+    subprocess.run([str(ROOT / 'scripts/native/.venv_comet/bin/python'), '-B', '-c',
         'import xlmhg.mhg_cython, numpy, pandas, scipy; print("Compiled native COMET dependencies available")'], env=env, check=True)
     set_style()
     print('Figure 1 preflight passed: physical runtime, original inputs, compiled COMET, fonts', flush=True)
 
 
-def execute_native(workers):
+def execute_native(workers, alpha):
     preflight()
     import scanpy as sc
     from sklearn.model_selection import train_test_split
@@ -135,7 +136,7 @@ def execute_native(workers):
              ('subsample', subset_path, 2500, METHODS)]
     states = {}; runs = {}
     env = os.environ.copy()
-    env.update(PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS=str(workers),
+    env.update(BENCHMARK_PYTHON=sys.executable, PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS=str(workers),
                OPENBLAS_NUM_THREADS=str(workers), MKL_NUM_THREADS=str(workers),
                NUMBA_NUM_THREADS=str(workers), PYTHONUNBUFFERED='1')
     for name, source, cells, methods in specs:
@@ -150,14 +151,14 @@ def execute_native(workers):
             'cellsieve_package_source': str(CELLSIEVE),
             'cellsieve_package_sha256': sha(str(CELLSIEVE)),
             'completed_methods': [], 'failed_methods': [], 'commands': {},
-            'source_hashes': {str(p): sha(p) for p in [NATIVE / 'scripts/benchmark_execution.py',
-                NATIVE / 'scripts/panel_adapters.py', CELLSIEVE, Path(__file__).resolve()]}}
+            'source_hashes': {str(p): sha(p) for p in [ROOT / 'scripts/native/scripts/benchmark_execution.py',
+                ROOT / 'scripts/native/scripts/panel_adapters.py', CELLSIEVE, Path(__file__).resolve()]}}
         for method in methods:
-            state['commands'][method] = ['bash', str(NATIVE / 'scripts/run.sh'),
+            state['commands'][method] = ['bash', str(ROOT / 'scripts/native/scripts/run.sh'),
                 '--adata-path', str(source), '--out-dir', str(run / method), '--methods', method,
                 '--panel-sizes', ','.join(map(str, PANELS)), '--max-genes', '0', '--cv-splits', '3',
                 '--random-seed', '42', '--n-workers', str(workers),
-                '--cell-sieve-script', str(CELLSIEVE), '--cell-sieve-alpha', '0.9',
+                '--cell-sieve-script', str(CELLSIEVE), '--cell-sieve-alpha', str(alpha),
                 '--cell-sieve-time-limit', '300', '--cell-sieve-mip-gap', '0.10']
         states[name] = state
         write_json(run / 'run_manifest.json', state)
@@ -218,7 +219,7 @@ def load_native(name):
     if not pointer_path.exists():
         raise RuntimeError(f'No completed real {name} native cortex run. Use --run-native first.')
     pointer = json.loads(pointer_path.read_text())
-    run = (ROOT / pointer['run_directory']).resolve()
+    run = local_path(ROOT / pointer['run_directory'])
     if not run.is_relative_to((NATIVE / 'runs').resolve()): raise ValueError('Unexpected native run location')
     manifest = json.loads((run / 'run_manifest.json').read_text())
     summary = run / 'benchmark_summary_all.csv'
@@ -236,7 +237,7 @@ def load_latest_cellsieve(name, reference_state):
     pointer = json.loads((FIGURE / 'results/latest_cellsieve_batch.json').read_text())
     if pointer.get('status') != 'complete':
         raise RuntimeError('Latest-package CellSieve runs are not yet complete')
-    batch = Path(pointer['batch']).resolve()
+    batch = local_path(pointer['batch'])
     if not batch.is_relative_to((NATIVE / 'runs').resolve()):
         raise ValueError('Unexpected latest CellSieve batch location')
     source = CELLSIEVE.resolve()
@@ -255,6 +256,12 @@ def load_latest_cellsieve(name, reference_state):
             not provenance.get('native_only') or not provenance.get('evaluation_unchanged')):
         raise ValueError('Latest CellSieve run lacks matching native package provenance')
     argv = provenance['argv']
+    alpha = float(meta['alpha'])
+    if not 0 <= alpha <= 1 or pointer.get('alpha') != alpha:
+        raise ValueError('Invalid or inconsistent CellSieve alpha in batch manifest')
+    if ('--cell-sieve-alpha' not in argv or
+            float(argv[argv.index('--cell-sieve-alpha') + 1]) != alpha):
+        raise ValueError('Alpha manifest does not match the executed CellSieve command')
     expected_limit = str(meta[name + '_time_limit_seconds'])
     if '--cell-sieve-time-limit' not in argv or float(argv[argv.index('--cell-sieve-time-limit') + 1]) != float(expected_limit):
         raise ValueError('CellSieve solver time limit does not match the requested cohort setting')
@@ -262,6 +269,11 @@ def load_latest_cellsieve(name, reference_state):
         raise ValueError('Latest CellSieve run used a different cortex cohort')
     table = pd.read_csv(run / 'benchmark_summary_all.csv', dtype={'requested_panel_size': str})
     validate_table(table, run, {**reference_state, 'methods': ['cell_sieve']})
+    for panel in PANELS:
+        metrics_path = run / local_path(reference_state['dataset']).stem / 'cell_sieve_package_runs' / 'Package_0.1.0' / f'panel_size_{panel}' / f'panel_size_{panel}_alpha_{alpha:.2f}' / 'summary_metrics.csv'
+        panel_metrics = pd.read_csv(metrics_path)
+        if len(panel_metrics) != 1 or abs(float(panel_metrics.iloc[0]['alpha_complexity']) - alpha) > 1e-12:
+            raise ValueError('Saved native panel alpha differs from manifest')
     table['result_origin'] = 'latest_package_native_run'
     return table, run, meta
 
@@ -270,7 +282,7 @@ def compile_saved_full_l1(batch=None):
     """Use validated current full-cortex runs and the five saved real L1 rows."""
     if batch is None:
         batch = Path(json.loads((FIGURE / 'results/native_comparator_batch.json').read_text())['batch'])
-    batch = Path(batch).resolve()
+    batch = local_path(batch)
     if not batch.is_relative_to((NATIVE / 'runs').resolve()):
         raise ValueError('Expected Figure 1 native batch')
     source_run = batch / 'full'
@@ -291,12 +303,12 @@ def compile_saved_full_l1(batch=None):
                              {**source_state, 'methods': current_methods})
     current.loc[current.method != 'cell_sieve', 'result_origin'] = 'current_native_batch'
 
-    legacy_file = FIGURE / 'results/benchmark/benchmark_summary_all.csv'
+    legacy_file = FIGURE / 'results/l1_reference/benchmark_summary_all.csv'
     legacy = pd.read_csv(legacy_file, dtype={'requested_panel_size': str})
     legacy = legacy[legacy.method == 'l1_regularization'].copy()
     if len(legacy) != len(PANELS) or set(legacy.requested_panel_size) != {str(n) for n in PANELS}:
         raise ValueError('Saved L1 does not cover the five original panel sizes')
-    legacy_root = FIGURE / 'results/benchmark/row_outputs'
+    legacy_root = FIGURE / 'results/l1_reference'
     original_outputs = []
     for row in legacy.itertuples():
         if row.dataset != DATA.stem or Path(row.adata_path).name != DATA.name:
@@ -306,10 +318,7 @@ def compile_saved_full_l1(batch=None):
         size = int(row.requested_panel_size)
         if int(row.actual_panel_size) != size or float(row.elapsed_seconds) <= 0 or float(row.peak_rss_mb) <= 0:
             raise ValueError('Saved L1 lacks exact panel size or measured resources')
-        relative = Path(row.output_dir)
-        if not relative.is_relative_to('Benchmark/results'):
-            raise ValueError('Unexpected saved L1 output path')
-        output = (legacy_root / relative.relative_to('Benchmark/results')).resolve()
+        output = (legacy_root / f'panel_size_{size}').resolve()
         if not output.is_relative_to(legacy_root.resolve()):
             raise ValueError('Saved L1 output leaves the archive')
         genes = (output / 'selected_genes.txt').read_text().splitlines()
@@ -344,6 +353,7 @@ def compile_saved_full_l1(batch=None):
         'cellsieve_package_source': str(local_path(cell_meta['cellsieve_source'])),
         'cellsieve_package_sha256': cell_meta['cellsieve_sha256'],
         'cellsieve_time_limit_seconds': cell_meta['full_time_limit_seconds'],
+        'cellsieve_alpha': cell_meta.get('alpha'),
         'result_sources': {
             'current_native_methods': {m: str((cell_run if m == 'cell_sieve' else source_run / m).relative_to(ROOT)) for m in current_methods},
             'saved_l1_table': str(legacy_file.relative_to(ROOT)),
@@ -363,8 +373,10 @@ def compile_saved_full_l1(batch=None):
 def compile_latest_subsample():
     """Replace only CellSieve in the shared real subset with validated package runs."""
     source_run = Path(json.loads((FIGURE / 'results/native_subsample_run.json').read_text())['run_directory'])
-    source_run = ROOT / source_run
+    source_run = local_path(ROOT / source_run)
     source_state = json.loads((source_run / 'run_manifest.json').read_text())
+    source_state = {**source_state, 'methods': [m for m in source_state['methods']
+                                               if m != 'linear_regression_de']}
     new_cell, cell_run, cell_meta = load_latest_cellsieve('subsample', source_state)
     frames = [new_cell]
     for method in source_state['methods']:
@@ -388,6 +400,7 @@ def compile_latest_subsample():
         'cellsieve_package_source': str(local_path(cell_meta['cellsieve_source'])),
         'cellsieve_package_sha256': cell_meta['cellsieve_sha256'],
         'cellsieve_time_limit_seconds': cell_meta['subsample_time_limit_seconds'],
+        'cellsieve_alpha': cell_meta.get('alpha'),
         'result_sources': {m: str((cell_run if m == 'cell_sieve' else source_run / m).relative_to(ROOT))
                            for m in source_state['methods']},
         'summary_sha256': sha(summary), 'successful_rows': len(table)}
@@ -448,9 +461,9 @@ def prepare_figure_table(table, manifest):
     return table
 
 
-def plot_metric(axis, table, methods, metric, title, letter, subtitle_size=None):
+def plot_metric(axis, table, methods, metric, title, letter, subtitle_size=None, compact=False):
     styles = dict(METHOD_STYLE)
-    styles['cell_sieve'] = ('CellSieve 0.1.0', styles['cell_sieve'][1])
+    styles['cell_sieve'] = ('Cell Sieve', styles['cell_sieve'][1])
     styles['comet'] = ('COMET', styles['comet'][1])
     for method in methods:
         display, color = styles[method]
@@ -458,8 +471,10 @@ def plot_metric(axis, table, methods, metric, title, letter, subtitle_size=None)
         if len(rows) != len(PANELS) or rows[metric].isna().any():
             raise ValueError('Missing real measurements for ' + method + '/' + metric)
         axis.plot(rows.actual_panel_size, rows[metric], '-o', color=color,
-                  label=display, ms=6.2, lw=2.25)
-    if subtitle_size is None:
+                  label=display, ms=3 if compact else 6.2, lw=1.2 if compact else 2.25)
+    if compact:
+        pass
+    elif subtitle_size is None:
         axis.set_title(title, loc='left', fontsize=20, fontweight='bold', pad=17)
     else:
         heading, _, subtitle = title.partition('\n')
@@ -486,16 +501,20 @@ def plot_metric(axis, table, methods, metric, title, letter, subtitle_size=None)
         axis.set_ylabel('Peak RSS (GiB)')
         axis.set_ylim(bottom=0)
     if metric in ('macro_f1', 'cv_macro_f1'):
-        axis.axhline(0.9, color='#303030', linewidth=2.4,
+        axis.axhline(0.9, color='#303030', linewidth=1.2 if compact else 2.4,
                      linestyle=(0, (6, 3)), zorder=1.5)
         axis.text(.025, .9, '0.90', transform=axis.get_yaxis_transform(),
-                  ha='left', va='bottom', fontsize=16, fontweight='bold',
+                  ha='left', va='bottom', fontsize=8 if compact else 16, fontweight='bold',
                   color='#303030', bbox={'facecolor': 'white', 'edgecolor': 'none',
                                         'alpha': .9, 'pad': 1.5}, zorder=4)
     axis.spines[['top', 'right']].set_visible(False)
     axis.grid(axis='y', color='.88', linewidth=.55)
     axis.text(-.11, 1.06, letter, transform=axis.transAxes,
-              fontweight='bold', fontsize=24, va='bottom')
+              fontweight='bold', fontsize=10 if compact else 24, va='bottom')
+    if compact:
+        axis.xaxis.label.set_size(8)
+        axis.yaxis.label.set_size(8)
+        axis.tick_params(labelsize=7, length=2.5, pad=2)
 
 
 def render_publication_figures(full, subsample):
@@ -519,7 +538,8 @@ def render_publication_figures(full, subsample):
     subset_methods = [m for m in subset_manifest['methods'] if m != 'linear_regression_de']
     if set(subset_methods) != set(full_methods + ['comet']):
         raise ValueError('COMET must appear only in the shared subsample')
-    counts_path = Path(subset_manifest['dataset']).parent / 'cohort_class_counts.csv'
+    subset_pointer = json.loads((FIGURE / 'results/native_subsample_run.json').read_text())
+    counts_path = local_path(ROOT / subset_pointer['run_directory']).parent / 'cohort_class_counts.csv'
     class_counts = pd.read_csv(counts_path)
     n_celltypes = len(class_counts)
     if (int(class_counts['full'].sum()) != full_manifest['input_shape'][0] or
@@ -529,7 +549,7 @@ def render_publication_figures(full, subsample):
                   f"({n_celltypes} cell types) · {full_manifest['input_shape'][1]:,} genes")
     subset_title = (f"Subsampled B6J Cortex\n{subset_manifest['input_shape'][0]:,} cells "
                     f"({n_celltypes} cell types) · {subset_manifest['input_shape'][1]:,} genes")
-    directory = FIGURE / 'figures'
+    directory = FIGURE / 'exports'
     directory.mkdir(parents=True, exist_ok=True)
     combined = pd.concat([full_table.assign(cohort='full_cortex_without_comet'),
                           subset_table.assign(cohort='subsampled_cortex_including_comet')],
@@ -540,49 +560,82 @@ def render_publication_figures(full, subsample):
         'actual_panel_size', 'elapsed_seconds', 'peak_rss_mb', 'peak_rss_gib',
         'ranking_reused', 'result_origin', 'n_workers_requested',
         'thread_count_peak', 'output_dir']
-    resource_path = directory / 'Supplemental_Figure1_resources.csv'
+    resource_path = directory / 'Supp1_resources.csv'
     combined[resource_columns].to_csv(resource_path, index=False)
-    totals_path = directory / 'Supplemental_Figure1_method_resources.csv'
+    totals_path = directory / 'Supp1_method_resources.csv'
     combined.groupby(['cohort', 'method'], sort=False).agg(
         total_measured_panel_seconds=('elapsed_seconds', 'sum'),
         peak_rss_gib=('peak_rss_gib', 'max'),
         completed_panels=('actual_panel_size', 'count')).to_csv(totals_path)
-    full_cell_run = ROOT / full_manifest['result_sources']['current_native_methods']['cell_sieve']
-    subset_cell_run = ROOT / subset_manifest['result_sources']['cell_sieve']
+    full_cell_run = local_path(ROOT / full_manifest['result_sources']['current_native_methods']['cell_sieve'])
+    subset_cell_run = local_path(ROOT / subset_manifest['result_sources']['cell_sieve'])
     solver_path = directory / 'CellSieve_solver_status.csv'
     pd.DataFrame(
         cellsieve_solver_rows('full_cortex_without_comet', full_manifest, full_cell_run) +
         cellsieve_solver_rows('subsampled_cortex_including_comet', subset_manifest, subset_cell_run)
     ).to_csv(solver_path, index=False)
 
-    method_image = plt.imread(METHODS_IMAGE)
+    ghostscript = shutil.which('gs')
+    if ghostscript is None:
+        candidates = sorted((Path.home() / 'miniconda3/envs').glob('*/bin/gs'))
+        if not candidates:
+            raise RuntimeError('Ghostscript is required to render methods_fig.pdf')
+        ghostscript = str(candidates[0])
+    with tempfile.TemporaryDirectory(prefix='figure1_panel_a_') as temporary:
+        image_path = Path(temporary) / 'methods.png'
+        subprocess.run([ghostscript, '-dSAFER', '-dBATCH', '-dNOPAUSE', '-q',
+                        '-sDEVICE=png16m', '-r350', '-dFirstPage=1', '-dLastPage=1',
+                        '-dTextAlphaBits=4', '-dGraphicsAlphaBits=4',
+                        '-sOutputFile=' + str(image_path), str(METHODS_PDF)], check=True)
+        method_image = plt.imread(image_path)
+        methods_image_sha256 = sha(image_path)
     nonwhite = (method_image[:, :, :3] < .985).any(axis=2)
     y, x = nonwhite.nonzero()
     if len(x) == 0:
         raise ValueError('The supplied methods diagram is blank')
-    border = 18
+    border = 4
     method_image = method_image[max(0, y.min()-border):min(len(nonwhite), y.max()+border+1),
-                                max(0, x.min()-border):min(nonwhite.shape[1], x.max()+border+1)]
-    main = plt.figure(figsize=(22, 11.7), facecolor='white')
-    grid = main.add_gridspec(2, 2, left=.045, right=.97, bottom=.20, top=.90,
-                             width_ratios=(2.35, 1), hspace=.40, wspace=.16)
+                                x.min():min(nonwhite.shape[1], x.max()+border+1)]
+    main = plt.figure(figsize=(16, 9), facecolor='white')
+    grid = main.add_gridspec(2, 2, left=.045, right=.97, bottom=.12, top=.88,
+                             width_ratios=(1.8, 1), hspace=.60, wspace=.20)
     methods_axis = main.add_subplot(grid[:, 0])
     methods_axis.imshow(method_image)
+    methods_axis.set_anchor('W')
+    # Match the workflow height to the complete benchmark column.
+    workflow_ratio = method_image.shape[1] / method_image.shape[0]
+    workflow_box = methods_axis.get_position(original=True)
+    workflow_height = workflow_box.width * main.get_figwidth() / (workflow_ratio * main.get_figheight())
+    workflow_top = .88
+    methods_axis.set_position([workflow_box.x0, workflow_top-workflow_height,
+                               workflow_box.width, workflow_height])
     methods_axis.axis('off')
     methods_axis.text(-.015, 1.03, 'A', transform=methods_axis.transAxes,
                       fontweight='bold', fontsize=24, va='bottom')
     plot_b = main.add_subplot(grid[0, 1])
     plot_c = main.add_subplot(grid[1, 1])
-    plot_metric(plot_b, full_table, full_methods, 'macro_f1', 'Benchmark in '+full_title, 'B', subtitle_size=15)
-    plot_metric(plot_c, subset_table, subset_methods, 'macro_f1', 'Benchmark in '+subset_title, 'C', subtitle_size=15)
+    plot_metric(plot_b, full_table, full_methods, 'macro_f1', '', 'B')
+    plot_metric(plot_c, subset_table, subset_methods, 'macro_f1', '', 'C')
+    # Align the top-row panel letters independently of the axes heights.
+    for axis, letter in ((methods_axis, 'A'), (plot_b, 'B')):
+        label = next(text for text in axis.texts if text.get_text() == letter)
+        label_x = main.transFigure.inverted().transform(
+            label.get_transform().transform(label.get_position()))[0]
+        label.set_transform(main.transFigure)
+        label.set_position((label_x, .915))
+    b_handles, b_names = plot_b.get_legend_handles_labels()
+    plot_b.legend(b_handles, b_names, loc='lower right', ncol=2,
+                  frameon=False, fontsize=12, columnspacing=1.1,
+                  handlelength=1.8, handletextpad=.5, borderaxespad=.7)
     handles, names = plot_c.get_legend_handles_labels()
-    main.legend(handles, names, loc='lower center', bbox_to_anchor=(.52, .077),
-                ncol=6, frameon=False, fontsize=17)
-    save(main, 'figure1_method_benchmark/figures', 'Figure1')
+    plot_c.legend(handles, names, loc='lower right', ncol=2,
+                  frameon=False, fontsize=12, columnspacing=1.1,
+                  handlelength=1.8, handletextpad=.5, borderaxespad=.7)
+    save(main, 'results/figure1/exports', 'Figure1')
 
-    supplement = plt.figure(figsize=(18, 28.5), facecolor='white')
-    supp_grid = supplement.add_gridspec(5, 2, left=.075, right=.975, bottom=.11,
-                                        top=.95, hspace=.48, wspace=.23)
+    supplement = plt.figure(figsize=(7.2, 7.4), facecolor='white')
+    supp_grid = supplement.add_gridspec(5, 2, left=.115, right=.98, bottom=.105,
+                                        top=.97, hspace=.22, wspace=.32)
     supp_metrics = ('cv_macro_f1', 'accuracy', 'cv_accuracy',
                     'elapsed_seconds', 'peak_rss_gib')
     supp_axes = []
@@ -591,19 +644,23 @@ def render_publication_figures(full, subsample):
                 (full_table, full_methods, full_title),
                 (subset_table, subset_methods, subset_title))):
             axis = supplement.add_subplot(supp_grid[row, col])
-            plot_metric(axis, table, methods, metric, cohort_title,
-                        chr(ord('A') + 2*row + col))
+            plot_metric(axis, table, methods, metric, '',
+                        chr(ord('A') + 2*row + col), compact=True)
+            if row < len(supp_metrics)-1:
+                axis.set_xlabel('')
+                axis.tick_params(axis='x', labelbottom=False)
             supp_axes.append(axis)
     handles, names = supp_axes[1].get_legend_handles_labels()
     supplement.legend(handles, names, loc='lower center',
-                      bbox_to_anchor=(.52, .055), ncol=6, frameon=False, fontsize=17)
-    save(supplement, 'figure1_method_benchmark/figures', 'Supplemental_Figure1')
+                      bbox_to_anchor=(.55, .015), ncol=3, frameon=False, fontsize=8,
+                      handlelength=1.8, columnspacing=1.4)
+    save(supplement, 'results/figure1/exports', 'Supp1')
 
     shared = {
         'renderer_sha256': sha(Path(__file__)),
         'methods_source_pdf': str(METHODS_PDF.relative_to(ROOT)),
         'methods_source_pdf_sha256': sha(METHODS_PDF),
-        'methods_panel_image_sha256': sha(METHODS_IMAGE),
+        'methods_panel_image_sha256': methods_image_sha256,
         'full_results_source': str(full_run.relative_to(ROOT)),
         'full_results_sha256': sha(full_run / 'benchmark_summary_all.csv'),
         'subsample_results_source': str(subset_run.relative_to(ROOT)),
@@ -617,6 +674,7 @@ def render_publication_figures(full, subsample):
         'full_l1_input_limit': full_manifest.get('saved_l1_input_limit'),
         'cellsieve_package_source': full_manifest.get('cellsieve_package_source'),
         'cellsieve_package_sha256': full_manifest.get('cellsieve_package_sha256'),
+        'cellsieve_alpha': full_manifest.get('cellsieve_alpha'),
         'cellsieve_full_run': full_manifest.get('result_sources', {}).get('current_native_methods', {}).get('cell_sieve'),
         'cellsieve_subsample_run': subset_manifest.get('result_sources', {}).get('cell_sieve'),
         'cellsieve_full_time_limit_seconds': full_manifest.get('cellsieve_time_limit_seconds'),
@@ -626,20 +684,20 @@ def render_publication_figures(full, subsample):
         ('Figure1', 'main', {'A': 'provided methods outline',
             'B': 'full refit macro-F1',
             'C': 'subsample refit macro-F1'}),
-        ('Supplemental_Figure1', 'supplement', {
+        ('Supp1', 'supplement', {
             'A-B': 'conditional CV macro-F1 moved from earlier main layout',
             'C-D': 'refit accuracy', 'E-F': 'conditional CV accuracy',
             'G-H': 'runtime', 'I-J': 'peak memory'})):
         write_json(directory / (stem + '.provenance.json'), {
             **shared, 'role': role, 'panels': panels,
-            'artifacts': {ext: sha(directory / (stem + '.' + ext))
+            'artifacts': {ext: sha(ROOT / 'figs' / (stem + '.' + ext))
                           for ext in ('pdf', 'svg', 'png')}})
     (directory / 'README.md').write_text(
         '# Figure 1 publication figures\n\n'
         '`Figure1.pdf/svg/png` places the supplied CellSieve methods outline at '
         'left (A), with full-cortex refit macro-F1 (B) and common COMET-inclusive '
         'subsample refit macro-F1 (C) stacked at right.\n\n'
-        '`Supplemental_Figure1.pdf/svg/png` contains ten plots: the two moved '
+        '`Supp1.pdf/svg/png` contains ten plots: the two moved '
         'conditional CV macro-F1 panels, then refit '
         'accuracy, conditional CV accuracy, observed runtime, and peak '
         'process-tree memory for each cohort. The 10/20/40/80/160 panel sizes '
@@ -647,8 +705,8 @@ def render_publication_figures(full, subsample):
         'base-2 log spacing. Dashed lines mark macro-F1 = 0.90 on macro-F1 '
         'plots. All newly typeset figure text uses enlarged Helvetica.\n\n'
         '`Figure1_results.csv` contains every plotted real-data row; '
-        '`Supplemental_Figure1_resources.csv` and '
-        '`Supplemental_Figure1_method_resources.csv` contain measured resource '
+        '`Supp1_resources.csv` and '
+        '`Supp1_method_resources.csv` contain measured resource '
         'values. `CellSieve_solver_status.csv` records actual Gurobi status, time '
         'and gap for every native package panel. Each figure has a provenance JSON. '
         'Full-cortex L1 uses validated '
@@ -658,13 +716,13 @@ def render_publication_figures(full, subsample):
         'recorded in provenance. Gurobi limits are 600 seconds per full '
         'panel and 300 seconds per subset panel. Older v4 CellSieve rows are excluded. '
         'The original methods PDF is preserved unchanged in the parent folder.\n')
-    print('Saved publication figures: ' + str(directory / 'Figure1.pdf') +
-          ' and ' + str(directory / 'Supplemental_Figure1.pdf'), flush=True)
+    print('Saved publication figures: ' + str(ROOT / 'figs/Figure1.pdf') +
+          ' and ' + str(ROOT / 'figs/Supp1.pdf'), flush=True)
 
 
 def finalize_batch(batch, only=None):
     """Validate completed real native outputs after a repaired failed method is rerun."""
-    batch = Path(batch).resolve()
+    batch = local_path(batch)
     if not batch.is_relative_to((NATIVE / 'runs').resolve()):
         raise ValueError('Batch must be inside Figure 1 native/runs')
     for name in ([only] if only else ('full', 'subsample')):
@@ -699,11 +757,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run-native', action='store_true', help='Run real cortex benchmark and then render')
     parser.add_argument('--n-workers', type=int, default=4)
+    parser.add_argument('--cell-sieve-alpha', type=float, default=0.9, help='CellSieve alpha for a new native batch (default: 0.9)')
     parser.add_argument('--finalize-batch', type=Path, help='Validate and render an existing real batch after a repaired method rerun')
     parser.add_argument('--analysis', choices=['full','subsample'], help='Finalize just one completed cohort')
     parser.add_argument('--check', action='store_true', help='Check the physical native runtime without running models')
     parser.add_argument('--reuse-saved-full-l1', action='store_true', help='Render full cortex from current native methods and the validated saved L1 panels')
     args = parser.parse_args()
+    if not 0 <= args.cell_sieve_alpha <= 1:
+        parser.error('--cell-sieve-alpha must be between 0 and 1')
     if args.n_workers < 1:
         parser.error('--n-workers must be positive')
     if args.check:
@@ -715,7 +776,7 @@ def main():
     elif args.finalize_batch:
         finalize_batch(args.finalize_batch, args.analysis)
     elif args.run_native:
-        execute_native(args.n_workers)
+        execute_native(args.n_workers, args.cell_sieve_alpha)
     else:
         full = compile_saved_full_l1()
         render_publication_figures(full, compile_latest_subsample())

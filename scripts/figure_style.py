@@ -34,7 +34,7 @@ def label(ax, text):
     ax.text(-.12,1.05,text,transform=ax.transAxes,weight='bold',fontsize=11,va='bottom')
 
 def save(fig, directory, stem):
-    directory=ROOT/directory
+    directory=ROOT/'figs' if stem in {'Figure1','Figure2','Figure3','Supp1','Supp2','Supp3','Supp4'} else ROOT/'figs/diagnostics'
     directory.mkdir(parents=True,exist_ok=True)
     for ext in ('pdf','svg','png'):
         fig.savefig(directory/(stem+'.'+ext),dpi=350)

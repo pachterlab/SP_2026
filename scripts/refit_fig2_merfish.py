@@ -6,6 +6,7 @@ uses the classifier defaults in the original CellSieve output code, with scaling
 fitted independently within each validation fold.
 """
 from pathlib import Path
+import argparse
 import hashlib
 import json
 import warnings
@@ -25,7 +26,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = ROOT / 'figure2_cortex_merfish/results'
+BASE = ROOT / 'results/figure2/results'
 SOURCE = ROOT / 'h5ads/Merfish_cortex.h5ad'
 DEST = BASE / 'merfish_panel50_coefficients'
 
@@ -57,12 +58,34 @@ def estimator():
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--alpha', type=float, help='Explicit expected selection alpha; default is active Figure 1 alpha')
+    parser.add_argument('--force', action='store_true', help='Refit even when matching saved outputs exist')
+    args = parser.parse_args()
     DEST.mkdir(parents=True, exist_ok=True)
     genes_path = BASE / 'panel50/selected_genes.txt'
+    selection_provenance = json.loads((BASE / 'panel50/provenance.json').read_text())
+    pointer = json.loads((ROOT / 'results/figure1/results/latest_cellsieve_batch.json').read_text())
+    alpha = float(pointer['alpha']) if args.alpha is None else args.alpha
+    if pointer.get('status') != 'complete' or selection_provenance.get('cell_sieve_alpha') != alpha:
+        raise ValueError('MERFISH panel alpha must match the active Figure 1 run')
+    source_sha = sha256(SOURCE)
+    genes_sha = sha256(genes_path)
+    prior_path = DEST / 'provenance.json'
+    if not args.force and prior_path.exists():
+        prior = json.loads(prior_path.read_text())
+        expected = {'cell_sieve_selection_alpha': alpha, 'source_sha256': source_sha,
+                    'selected_genes_sha256': genes_sha, 'script_sha256': sha256(__file__),
+                    'sklearn_version': sklearn.__version__}
+        outputs = ['metrics.json', 'cv_spatial_predictions.csv', 'model_coefficients.csv',
+                   'historical_metric_comparison.csv', 'cv_confusion_matrix_row_normalized.csv']
+        if all(prior.get(k) == v for k, v in expected.items()) and all((DEST / name).is_file() for name in outputs):
+            print(f'Reusing validated MERFISH refit for alpha {alpha:g} and identical genes/input/runtime', flush=True)
+            return
     genes = genes_path.read_text().splitlines()
-    saved_path = BASE / 'merfish_panel50_cv/class_min10_spatial_predictions.csv'
+    saved_path = BASE / 'reference_checks/merfish_previous_predictions.csv'
     saved = pd.read_csv(saved_path, dtype={'cell_label': str})
-    old_metrics = json.loads((BASE / 'merfish_panel50_cv/class_min10_metrics.json').read_text())
+    old_metrics = json.loads((BASE / 'reference_checks/merfish_previous_metrics.json').read_text())
     a = ad.read_h5ad(SOURCE, backed='r')
     counts = a.obs['class'].astype(str).value_counts()
     keep = a.obs['class'].astype(str).isin(counts[counts >= 10].index)
@@ -136,8 +159,10 @@ def main():
                'historical_prediction_differences': int(np.sum(pred != saved.predicted_class.to_numpy())),
                'all_historical_metrics_match_at_1e-12': bool(comparison['match_at_1e-12'].all())}
     (DEST / 'metrics.json').write_text(json.dumps(metrics, indent=2) + '\n')
-    provenance = {'source': str(SOURCE), 'source_sha256': sha256(SOURCE),
-                  'selected_genes_source': str(genes_path), 'selected_genes_sha256': sha256(genes_path),
+    provenance = {'source': str(SOURCE), 'source_sha256': source_sha,
+                  'cell_sieve_selection_alpha': alpha,
+                  'selection_provenance': selection_provenance,
+                  'selected_genes_source': str(genes_path), 'selected_genes_sha256': genes_sha,
                   'historical_predictions_source': str(saved_path), 'historical_predictions_sha256': sha256(saved_path),
                   'normalization_metadata': normalization,
                   'expression': 'AnnData X (already log2p); no further log transform',

@@ -1,0 +1,11 @@
+figure_or_analysis,part,saved_alpha,required_alpha,status,evidence,needed_update
+Figure1,full cortex and stratified subset,0.9,0.9,rerun complete,results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z; results/figure1/exports/Figure1.provenance.json,None for alpha
+Figure2,A native 40-gene coefficients,0.9,0.9,rerun complete,results/figure2/exports/Figure2.provenance.json,None for alpha
+Figure2,B-C Npas3 and Flt1 violins,0.9,0.9,rerun complete,results/figure2/exports/Figure2.provenance.json,None for alpha
+Figure2,D MERFISH coefficients for the overlap-constrained 50-gene panel,0.9,0.9,rerun complete,results/figure2/exports/Figure2.provenance.json,None for alpha
+Figure2,E-F MERFISH annotation and held-out predictions,0.9,0.9,rerun complete,results/figure2/exports/Figure2.provenance.json,None for alpha
+Figure3,A-B cortex noise refinement,0.7,0.7,already matches,results/figure3/exports/Figure3.md; scripts/figure3/noise_source/poison_expt.py,None for alpha
+Figure3,C-E Zheng initialization and refinement,0.7,0.7,already matches,results/figure3/Zhengmix4eq_single_pass_grid_60genes/config.json; results/figure3/Zhengmix4eq_three_pass_60genes/config.json,None for alpha; initialization alone has no CellSieve alpha
+Supplementary alpha sensitivity,nine tissues; 20 paired repeats; 40 genes,0.1;0.3;0.5;0.7;0.9,intentional sensitivity sweep,complete,results/supplementary/alpha_subsampling/summary/alpha_sensitivity_summary.csv,None; stars indicate empirical highest means
+Selected-alpha tissue supplement,nine B6J tissues,tissue-specific 0.5/0.7/0.9,tissue-specific 0.5/0.7/0.9,complete,results/supplementary/fullinput_benchmarks/selected_alphas.csv,None; final unified cohort folders contain only selected-alpha fits
+Selected-alpha cortex strains,eight strains,0.9,0.9,complete,results/supplementary/fullinput_benchmarks/benchmark_results_strains.csv,None; B6J shared with tissue analysis

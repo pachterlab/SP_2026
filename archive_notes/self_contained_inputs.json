@@ -1,0 +1,208 @@
+{
+  "files": [
+    {
+      "source": "/home/nikki/celltype_compression_2/CortexHippocampus/B6J_CortexHippocampus_subset.h5ad",
+      "local": "h5ads/B6J_CortexHippocampus_subset.h5ad",
+      "bytes": 3133146627,
+      "sha256": "597d7c5e23369691092b97d8116a41b7fbdd32f09df8049d86f0bbeb7537b6dc"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/CortexHippocampus/B6J_CortexHippocampus_subset_POISONED_010.h5ad",
+      "local": "h5ads/B6J_CortexHippocampus_subset_POISONED_010.h5ad",
+      "bytes": 3133235142,
+      "sha256": "090e9c993aadbaaf2ab85c8edb9e779e535b10f00daa1a434060e62ca32cb233"
+    },
+    {
+      "source": "/home/nikki/HCR/MERFISH/Merfish_cortex.h5ad",
+      "local": "h5ads/Merfish_cortex.h5ad",
+      "bytes": 41632468,
+      "sha256": "cf7abd8bc5846a848f1a695eaef45386a9672888d45af30816464df98b136109"
+    },
+    {
+      "source": "/home/nikki/cell_sieve_package/cellsieve.py",
+      "local": "external/cell_sieve_package/cellsieve.py",
+      "bytes": 24384,
+      "sha256": "1640e8902d44d7d283abd526af6e6f7a073b3a630945b982c3ab81a8e703baab"
+    },
+    {
+      "source": "/home/nikki/cell_sieve_package/LICENSE",
+      "local": "external/cell_sieve_package/LICENSE",
+      "bytes": 1317,
+      "sha256": "6283a4fa44d8c1b341aeab90a4b22f501980895f867bcc2127ce484e7a4ff489"
+    },
+    {
+      "source": "/home/nikki/cell_sieve_package/README.md",
+      "local": "external/cell_sieve_package/README.md",
+      "bytes": 3840,
+      "sha256": "ae4964d8a442fa8467cd5cef4f90f04e249a40645dd3f748c783ce9a137ed121"
+    },
+    {
+      "source": "/home/nikki/cell_sieve_package/environment.yml",
+      "local": "external/cell_sieve_package/environment.yml",
+      "bytes": 245,
+      "sha256": "0141cd61a7c2dbac4994d421669840af2cfc72de1872017613c17c14d2804f33"
+    },
+    {
+      "source": "/home/nikki/cell_sieve_package/pyproject.toml",
+      "local": "external/cell_sieve_package/pyproject.toml",
+      "bytes": 528,
+      "sha256": "494b6d3e11ca56a6a5cb0a3b5110c86b460c0aa99b61340235b2f85ad535b096"
+    },
+    {
+      "source": "/home/nikki/ember_package/LICENSE",
+      "local": "external/ember_package/LICENSE",
+      "bytes": 1344,
+      "sha256": "4f29b1b5fb4f212904cdfc64b4fc52d8332c680ba6d7a0c177e28eba0b47cf4e"
+    },
+    {
+      "source": "/home/nikki/ember_package/README.md",
+      "local": "external/ember_package/README.md",
+      "bytes": 3496,
+      "sha256": "d2311c772e1f0232ee44d7db1836d793edbeb73428d52e16c309beba2d4f3e4c"
+    },
+    {
+      "source": "/home/nikki/ember_package/pyproject.toml",
+      "local": "external/ember_package/pyproject.toml",
+      "bytes": 822,
+      "sha256": "bcfeb4648d606326679fe23272cb7fb90214846ad8899c113698a69bcd164c74"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/__main__.py",
+      "local": "external/ember_package/src/ember_py/__main__.py",
+      "bytes": 245,
+      "sha256": "983b5c336e67d8e87738f4106bcf9e7582f187cfce098672c848099b4a0c5d6e"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/__init__.py",
+      "local": "external/ember_package/src/ember_py/__init__.py",
+      "bytes": 46,
+      "sha256": "2272522dabeb22ee57b4a87cff4c1965a266a14d2dd8bac9f6d874917bcd31e3"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/sample_replicates.py",
+      "local": "external/ember_package/src/ember_py/sample_replicates.py",
+      "bytes": 5610,
+      "sha256": "ff09f217f25eb3d285109b1e7a84d84dbc1356fb4318059eabaf8cf7cf33bfd3"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/top_genes.py",
+      "local": "external/ember_package/src/ember_py/top_genes.py",
+      "bytes": 10493,
+      "sha256": "a713f1be51b4cd427203eb2b8e92236814dd9fa4bc6562bfaa8e3cd3a78aecbf"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/cli.py",
+      "local": "external/ember_package/src/ember_py/cli.py",
+      "bytes": 28405,
+      "sha256": "73d42d3e9764bcf0c6c02b1b43b1d97f50090dc0234a892b6113b337020155cf"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/light_ember.py",
+      "local": "external/ember_package/src/ember_py/light_ember.py",
+      "bytes": 21725,
+      "sha256": "10c89acc90df20cbf523f1db663cab1a2ea1542f8a6c499f668bfe8d2ed195f5"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/generate_pvals.py",
+      "local": "external/ember_package/src/ember_py/generate_pvals.py",
+      "bytes": 15659,
+      "sha256": "bb4c3af65b9d82c395253b9120368142852a3e610015c00c8d8326dea3abf763"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/generate_entropy_metrics.py",
+      "local": "external/ember_package/src/ember_py/generate_entropy_metrics.py",
+      "bytes": 5451,
+      "sha256": "45b246d611e42aed10178be508b3625da4b010107901bab359eb8394d1459044"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/plots.py",
+      "local": "external/ember_package/src/ember_py/plots.py",
+      "bytes": 22305,
+      "sha256": "1e3a23e18f438f04e6680ace47d02cb77f4df732b5c671df7af7b3b2cced39c4"
+    },
+    {
+      "source": "/home/nikki/ember_package/src/ember_py/.ipynb_checkpoints/plots-checkpoint.py",
+      "local": "external/ember_package/src/ember_py/.ipynb_checkpoints/plots-checkpoint.py",
+      "bytes": 19714,
+      "sha256": "eb82963e18dafd7df93791b88c84c3bc69c6e91bd16a15eda9e474549fcdd388"
+    },
+    {
+      "source": "/home/nikki/covariance_geometry/SEP_2026/fonts/Helvetica/Helvetica BoldItalic.ttf",
+      "local": "assets/fonts/Helvetica/Helvetica BoldItalic.ttf",
+      "bytes": 49696,
+      "sha256": "43ac84979512a812fe60747a7225e802fbdb687799156c59459453112368d8fd"
+    },
+    {
+      "source": "/home/nikki/covariance_geometry/SEP_2026/fonts/Helvetica/Helvetica Roman.ttf",
+      "local": "assets/fonts/Helvetica/Helvetica Roman.ttf",
+      "bytes": 50280,
+      "sha256": "d330331d86265579565762e4f48223540eb776469a997b3fb641998d4000e0ce"
+    },
+    {
+      "source": "/home/nikki/covariance_geometry/SEP_2026/fonts/Helvetica/Helvetica CE Bold.otf",
+      "local": "assets/fonts/Helvetica/Helvetica CE Bold.otf",
+      "bytes": 24324,
+      "sha256": "9409aa15a624331e2e53ff8e00d0e8a241cd5c72be7353fef9fa9db3eebbb02b"
+    },
+    {
+      "source": "/home/nikki/covariance_geometry/SEP_2026/fonts/Helvetica/Helvetica RomanItalic.ttf",
+      "local": "assets/fonts/Helvetica/Helvetica RomanItalic.ttf",
+      "bytes": 50884,
+      "sha256": "9f433b1203afd6323621e10f8a904984e116338289e195eb491d44852df713ad"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/CortexHippocampus_v2_coarse_posonly_full_cv/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_00.csv",
+      "bytes": 18510,
+      "sha256": "86e31c09dddc8679b8cc3edf1b6e77f11690f29c987d89f1aa377939cd48e5d1"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/Adrenal_alpha_0.9/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_01.csv",
+      "bytes": 19658,
+      "sha256": "a215f6778b0b1160ead109d40501452c55ebaa9ff57a1f3dc290528348bc88ce"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/Gastrocnemius_alpha_0.7/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_02.csv",
+      "bytes": 21725,
+      "sha256": "b2b6fce030e7ad60392bd4b336d6cb6606595dacbc6d11093af120c09727e2a2"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/GonadsFemale_alpha_0.5/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_03.csv",
+      "bytes": 20501,
+      "sha256": "3bf8b8181919d9268a1b856cba6fb58343a9a404a1202a19b46f8aac21a276d6"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/GonadsMale_alpha_0.9/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_04.csv",
+      "bytes": 19992,
+      "sha256": "acbdb98c65a340cec49e4c9b3372ba106e1a38cd735396bb57f042e77a54eb34"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/Kidney_alpha_0.9/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_05.csv",
+      "bytes": 20336,
+      "sha256": "de27b2295714cf16ca0c2e0334329d23806a49b7f7fe2eff091c8628dcd182eb"
+    },
+    {
+      "source": "/home/nikki/celltype_compression_2/Benchmark/results/cell_sieve_v4_alpha_custom_8_tissues_all_methods/Liver_alpha_0.9/benchmark_summary_all.csv",
+      "local": "archive_notes/verification_inputs/summary_06.csv",
+      "bytes": 18989,
+      "sha256": "f8349fc441d58bcb21f12635ccf1a050ca436a9b932be5ffc69679eda54ea0a1"
+    },
+    {
+      "source": "/home/nikki/SP_2026/h5ads/Figure4_B6J_CortexHippocampus_namefiltered.h5ad",
+      "local": "h5ads/Figure4_B6J_CortexHippocampus_namefiltered.h5ad",
+      "bytes": 4575668916,
+      "sha256": "2f11bdac027fe7c1a073321bd22bd712830d686c8390df898c4a21b1ccd2da5c"
+    },
+    {
+      "source": "/home/nikki/SP_2026/h5ads/Figure4_B6J_EMBER_permutation_input.h5ad",
+      "local": "h5ads/Figure4_B6J_EMBER_permutation_input.h5ad",
+      "bytes": 2289797020,
+      "sha256": "f7d76f55fe06cbc5e2dc4a7f1b36020674abe52430674bc133aaca8edf6f16b5"
+    }
+  ]
+}

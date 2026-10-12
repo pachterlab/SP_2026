@@ -1,0 +1,189 @@
+[
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/__init__.py",
+    "destination": "vendor/COMETSC/Comet/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/__main__.py",
+    "destination": "vendor/COMETSC/Comet/__main__.py",
+    "source_sha256": "c7a337a98b979fceca2ea673b3262debd6d644b39ae1935427a372b6c5997b17",
+    "runtime_sha256": "790231f253bfff1fa091bece6ca247708e4fd66ccf1f78a4bb255edc0c7fb997",
+    "compatibility_changes": [
+      "Pandas columns-list compatibility in missing-pair visualization placeholder"
+    ]
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/hgmd.py",
+    "destination": "vendor/COMETSC/Comet/hgmd.py",
+    "source_sha256": "dd4a1d0ec8e34ae12a08fa0ab50e157e044ed7c437245b3511dc646b965c1198",
+    "runtime_sha256": "44f32cfda35d0d7f9587d48de452217a7b2aa87e81c794536c895483ac392944",
+    "compatibility_changes": [
+      "Source encoding Latin-1 to UTF-8",
+      "Pandas native result tuple reduction"
+    ]
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/quads.py",
+    "destination": "vendor/COMETSC/Comet/quads.py",
+    "source_sha256": "94ddc3b7515b1248213ae5a28673696bf6c3b58bfa394e2ba9dac514c9fc532d",
+    "runtime_sha256": "94ddc3b7515b1248213ae5a28673696bf6c3b58bfa394e2ba9dac514c9fc532d",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/qvalue.py",
+    "destination": "vendor/COMETSC/Comet/qvalue.py",
+    "source_sha256": "7822d60aaf33b0881e43872ce4b8df46371c9d98ca74c24e941364bf4a8ca447",
+    "runtime_sha256": "7822d60aaf33b0881e43872ce4b8df46371c9d98ca74c24e941364bf4a8ca447",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/Comet/visualize.py",
+    "destination": "vendor/COMETSC/Comet/visualize.py",
+    "source_sha256": "3c248d8bf6ca025b91f960fc802215cc0ab992f49d4c2a7144e00faafba5e9c1",
+    "runtime_sha256": "3c248d8bf6ca025b91f960fc802215cc0ab992f49d4c2a7144e00faafba5e9c1",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/COMETSC/LICENSE",
+    "destination": "vendor/COMETSC/LICENSE",
+    "source_sha256": "8e12b5e99fe2267b9e7558789f904ed0a3109b84fece995a9b3d3aa735a0aecf",
+    "runtime_sha256": "8e12b5e99fe2267b9e7558789f904ed0a3109b84fece995a9b3d3aa735a0aecf",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/LICENSE",
+    "destination": "vendor/NSForest/LICENSE",
+    "source_sha256": "d4ce5c4144315fb9310dcb49ca76a8b7a5ede87499a86369925ae3bf6501385e",
+    "runtime_sha256": "d4ce5c4144315fb9310dcb49ca76a8b7a5ede87499a86369925ae3bf6501385e",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/__init__.py",
+    "destination": "vendor/NSForest/nsforest/__init__.py",
+    "source_sha256": "fd667752e3afe35e6503a68df6530436422e4ef368a7be9c117b75de0346afe4",
+    "runtime_sha256": "fd667752e3afe35e6503a68df6530436422e4ef368a7be9c117b75de0346afe4",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/__main__.py",
+    "destination": "vendor/NSForest/nsforest/__main__.py",
+    "source_sha256": "6817409e7d6e81f164d843aed02ddd8ab689cc0102e367f61459391d63e65d04",
+    "runtime_sha256": "6817409e7d6e81f164d843aed02ddd8ab689cc0102e367f61459391d63e65d04",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/evaluating/__init__.py",
+    "destination": "vendor/NSForest/nsforest/evaluating/__init__.py",
+    "source_sha256": "1a722841003f96f1d6c285d27d34834dd2c58eef309bd4f30f82266bb556b1d7",
+    "runtime_sha256": "1a722841003f96f1d6c285d27d34834dd2c58eef309bd4f30f82266bb556b1d7",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/evaluating/_run_markers.py",
+    "destination": "vendor/NSForest/nsforest/evaluating/_run_markers.py",
+    "source_sha256": "8e433fd23ffefa91a691821c901d268c0c98438af7d51260915778fe651bfea1",
+    "runtime_sha256": "8e433fd23ffefa91a691821c901d268c0c98438af7d51260915778fe651bfea1",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/nsforesting/__init__.py",
+    "destination": "vendor/NSForest/nsforest/nsforesting/__init__.py",
+    "source_sha256": "d9fc2106ac724898f569d6334dca03c89499a1e0f5d28c40481609a8bf0fb6f0",
+    "runtime_sha256": "d9fc2106ac724898f569d6334dca03c89499a1e0f5d28c40481609a8bf0fb6f0",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/nsforesting/_run_nsf.py",
+    "destination": "vendor/NSForest/nsforest/nsforesting/_run_nsf.py",
+    "source_sha256": "f3a11a199e72c96aedc12ceb563fae90f87ddf670007879376ea51b70d8a86c8",
+    "runtime_sha256": "f3a11a199e72c96aedc12ceb563fae90f87ddf670007879376ea51b70d8a86c8",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/nsforesting/calculate_fraction.py",
+    "destination": "vendor/NSForest/nsforest/nsforesting/calculate_fraction.py",
+    "source_sha256": "cbb0740dd82e0eaf838a0d686577eb676b348bfe8e7617d9207873a727ee7667",
+    "runtime_sha256": "cbb0740dd82e0eaf838a0d686577eb676b348bfe8e7617d9207873a727ee7667",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/nsforesting/mydecisiontreeevaluation.py",
+    "destination": "vendor/NSForest/nsforest/nsforesting/mydecisiontreeevaluation.py",
+    "source_sha256": "db31da71eccef8e6eee7fc5951e2d771d6cec6e3ab450c6af5ca3d0ac3674abf",
+    "runtime_sha256": "db31da71eccef8e6eee7fc5951e2d771d6cec6e3ab450c6af5ca3d0ac3674abf",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/nsforesting/myrandomforest.py",
+    "destination": "vendor/NSForest/nsforest/nsforesting/myrandomforest.py",
+    "source_sha256": "3e02f07980f325dca598e0d2e56663da13bb2be112730f290580245947ab004f",
+    "runtime_sha256": "3e02f07980f325dca598e0d2e56663da13bb2be112730f290580245947ab004f",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/plotting/__init__.py",
+    "destination": "vendor/NSForest/nsforest/plotting/__init__.py",
+    "source_sha256": "9745316567d027dbaf6aa540284ea2fb96403bb742e84dac1f2d292422028a90",
+    "runtime_sha256": "9745316567d027dbaf6aa540284ea2fb96403bb742e84dac1f2d292422028a90",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/plotting/_make_plots.py",
+    "destination": "vendor/NSForest/nsforest/plotting/_make_plots.py",
+    "source_sha256": "85d4e552bdff4c14c9970c4d47e2d1efd0ccfefd125bdbb1dcd6cb5263e0819f",
+    "runtime_sha256": "85d4e552bdff4c14c9970c4d47e2d1efd0ccfefd125bdbb1dcd6cb5263e0819f",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/preprocessing/__init__.py",
+    "destination": "vendor/NSForest/nsforest/preprocessing/__init__.py",
+    "source_sha256": "df15b6e4f96ae63d00b8c3c7fa1629d5dcf9aedb7c0ce345a2fc9b15ca2f56fa",
+    "runtime_sha256": "df15b6e4f96ae63d00b8c3c7fa1629d5dcf9aedb7c0ce345a2fc9b15ca2f56fa",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/preprocessing/_add_ann.py",
+    "destination": "vendor/NSForest/nsforest/preprocessing/_add_ann.py",
+    "source_sha256": "4840c775b81839cc795c2590dab140ced24b60a947be14c36e4ed90f496c4c28",
+    "runtime_sha256": "4840c775b81839cc795c2590dab140ced24b60a947be14c36e4ed90f496c4c28",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/NSForest/nsforest/utils.py",
+    "destination": "vendor/NSForest/nsforest/utils.py",
+    "source_sha256": "a69564d53cc58c4b322f7c7fc2333667dc56394c4b400733994f4e4e1618b47e",
+    "runtime_sha256": "a69564d53cc58c4b322f7c7fc2333667dc56394c4b400733994f4e4e1618b47e",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/scGeneFit-python/LICENSE",
+    "destination": "vendor/scGeneFit-python/LICENSE",
+    "source_sha256": "0b918d60d27eea7d09d2b6608c7ae481b12fe5371ae9ef9a37f649a3919e2f5e",
+    "runtime_sha256": "0b918d60d27eea7d09d2b6608c7ae481b12fe5371ae9ef9a37f649a3919e2f5e",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/scGeneFit-python/scGeneFit/__init__.py",
+    "destination": "vendor/scGeneFit-python/scGeneFit/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/scGeneFit-python/scGeneFit/data_files/__init__.py",
+    "destination": "vendor/scGeneFit-python/scGeneFit/data_files/__init__.py",
+    "source_sha256": "40b5d047d6bb92fdc2815311fe0e0940ea6cd266d0d3854936fb83b4da865eee",
+    "runtime_sha256": "40b5d047d6bb92fdc2815311fe0e0940ea6cd266d0d3854936fb83b4da865eee",
+    "compatibility_changes": []
+  },
+  {
+    "source": "/home/nikki/SP_2026/external/scGeneFit-python/scGeneFit/functions.py",
+    "destination": "vendor/scGeneFit-python/scGeneFit/functions.py",
+    "source_sha256": "1f85f50b94a9291a93e28d170097f2aa9b2bb6585193e41ad7995d85d0eb0c80",
+    "runtime_sha256": "1f85f50b94a9291a93e28d170097f2aa9b2bb6585193e41ad7995d85d0eb0c80",
+    "compatibility_changes": []
+  }
+]

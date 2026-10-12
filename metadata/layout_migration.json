@@ -1,0 +1,1001 @@
+{
+  "operation": "Path organization and figure export renaming only; no fits",
+  "relocations": {
+    "figure1_method_benchmark": "results/figure1",
+    "figure2_cortex_merfish": "results/figure2",
+    "figure3_annotation": "results/figure3",
+    "supplementary": "results/supplementary",
+    "figure1_method_benchmark/native/scripts": "scripts/native/scripts",
+    "figure1_method_benchmark/native/vendor": "scripts/native/vendor",
+    "figure1_method_benchmark/native/.venv_comet": "scripts/native/.venv_comet",
+    "figure1_method_benchmark/native/vendor_manifest.json": "scripts/native/vendor_manifest.json",
+    "figure1_method_benchmark/figures": "results/figure1/exports",
+    "figure2_cortex_merfish/figures": "results/figure2/exports",
+    "figure3_annotation/figures": "results/figure3/exports",
+    "figure3_annotation/noise_benchmark/scripts/source": "scripts/figure3/noise_source",
+    "figure3_annotation/cellsieve30_300s/scripts": "scripts/figure3/cortex_pca",
+    "figure3_annotation/Zhengmix4eq_single_pass_grid_60genes/scripts": "scripts/figure3/zheng_screen",
+    "figure3_annotation/Zhengmix4eq_three_pass_60genes/scripts": "scripts/figure3/zheng_passes",
+    "figure3_annotation/Zhengmix4eq_native_grid/run_grid.py": "scripts/figure3/zheng_initialization/run_grid.py",
+    "figure1_method_benchmark/figures/Figure1.pdf": "figs/Figure1.pdf",
+    "figure1_method_benchmark/figures/Figure1.png": "figs/Figure1.png",
+    "figure1_method_benchmark/figures/Figure1.svg": "figs/Figure1.svg",
+    "figure2_cortex_merfish/figures/Figure2_cortex_merfish.pdf": "figs/Figure2.pdf",
+    "figure2_cortex_merfish/figures/Figure2_cortex_merfish.png": "figs/Figure2.png",
+    "figure2_cortex_merfish/figures/Figure2_cortex_merfish.svg": "figs/Figure2.svg",
+    "figure3_annotation/figures/Figure3.pdf": "figs/Figure3.pdf",
+    "figure3_annotation/figures/Figure3.png": "figs/Figure3.png",
+    "figure3_annotation/figures/Figure3.svg": "figs/Figure3.svg",
+    "figure1_method_benchmark/figures/Supplemental_Figure1.pdf": "figs/Supp1.pdf",
+    "figure1_method_benchmark/figures/Supplemental_Figure1.png": "figs/Supp1.png",
+    "figure1_method_benchmark/figures/Supplemental_Figure1.svg": "figs/Supp1.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf": "figs/Supp2.pdf",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png": "figs/Supp2.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg": "figs/Supp2.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf": "figs/Supp3.pdf",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png": "figs/Supp3.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg": "figs/Supp3.svg",
+    "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.pdf": "figs/Supp4.pdf",
+    "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.png": "figs/Supp4.png",
+    "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.svg": "figs/Supp4.svg",
+    "figure1_method_benchmark/methods_fig.pdf": "assets/methods.pdf",
+    "results/figure1/methods_fig.pdf": "assets/methods.pdf",
+    "figure1_method_benchmark/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf",
+    "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf",
+    "figure1_method_benchmark/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png",
+    "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png",
+    "figure1_method_benchmark/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg",
+    "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg",
+    "figure2_cortex_merfish/results/panel40_marker_audit/panel40_marker_audit.pdf": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.pdf",
+    "results/figure2/results/panel40_marker_audit/panel40_marker_audit.pdf": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.pdf",
+    "figure2_cortex_merfish/results/panel40_marker_audit/panel40_marker_audit.png": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.png",
+    "results/figure2/results/panel40_marker_audit/panel40_marker_audit.png": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.png",
+    "figure2_cortex_merfish/results/panel40_marker_audit/panel40_marker_audit.svg": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.svg",
+    "results/figure2/results/panel40_marker_audit/panel40_marker_audit.svg": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.svg",
+    "results/manuscript/previous_figures/Alpha_subsampling_all_tissues.pdf": "figs/diagnostics/evidence/manuscript/previous_figures/Alpha_subsampling_all_tissues.pdf",
+    "results/manuscript/previous_figures/Figure2_cortex_merfish.pdf": "figs/diagnostics/evidence/manuscript/previous_figures/Figure2_cortex_merfish.pdf",
+    "results/manuscript/previous_figures/Figure3.pdf": "figs/diagnostics/evidence/manuscript/previous_figures/Figure3.pdf",
+    "results/manuscript/previous_figures/Supplement_Figure2_cortex_eight_strains.pdf": "figs/diagnostics/evidence/manuscript/previous_figures/Supplement_Figure2_cortex_eight_strains.pdf",
+    "results/manuscript/previous_figures/Supplemental_Figure1.pdf": "figs/diagnostics/evidence/manuscript/previous_figures/Supplemental_Figure1.pdf",
+    "supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf",
+    "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf",
+    "supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png",
+    "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png",
+    "supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg",
+    "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg",
+    "supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf",
+    "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf",
+    "supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png",
+    "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png",
+    "supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg",
+    "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg",
+    "supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf",
+    "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf",
+    "supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png",
+    "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png",
+    "supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg",
+    "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg",
+    "supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf",
+    "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf",
+    "supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png",
+    "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png",
+    "supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg",
+    "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg",
+    "supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf",
+    "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf",
+    "supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png",
+    "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png",
+    "supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg",
+    "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg",
+    "supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf",
+    "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf",
+    "supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png",
+    "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png",
+    "supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg",
+    "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg",
+    "supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf",
+    "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf",
+    "supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png",
+    "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png",
+    "supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg",
+    "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg",
+    "supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf",
+    "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf",
+    "supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png",
+    "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png",
+    "supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg",
+    "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg",
+    "supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf",
+    "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf",
+    "supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png",
+    "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png",
+    "supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg",
+    "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+    "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+    "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+    "supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+    "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg"
+  },
+  "publication_figures": {
+    "Figure1": "figure1_method_benchmark/figures/Figure1",
+    "Figure2": "figure2_cortex_merfish/figures/Figure2_cortex_merfish",
+    "Figure3": "figure3_annotation/figures/Figure3",
+    "Supp1": "figure1_method_benchmark/figures/Supplemental_Figure1",
+    "Supp2": "supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha",
+    "Supp3": "supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09",
+    "Supp4": "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues"
+  },
+  "script_hashes": {
+    "scripts/fullinput_benchmarks.py": {
+      "before": "dba17af2af6371b4ef5524fc4cccddc86f734ac8e1b9d72ca75e1dbcc31a9d45",
+      "after": "33bb1b50a9ec895fe6c236ab53312dc276a03a02b8a73a61f7013ac1e842612b"
+    },
+    "scripts/rerun_cellsieve_alpha07.py": {
+      "before": "97c75b0ab7abcd1f0c27a08b539be255ddbf2ec6ec6ae0bee1f45f7cf4a91376",
+      "after": "97c75b0ab7abcd1f0c27a08b539be255ddbf2ec6ec6ae0bee1f45f7cf4a91376"
+    },
+    "scripts/finalize_figures12.py": {
+      "before": "527bac0142e1f13417d6ac9c68b9dca87dc3cdd7e92267624710166a3565d799",
+      "after": "c735f665ec3a6e66aa47abde1e3353940163a2f9d7c752da912c97dcdbe50ec6"
+    },
+    "scripts/fig2_cortex_merfish.py": {
+      "before": "fadfcd1e1b32a848f58d7d46c5328b20317112d202d4f8a11b9c790bbc817cc2",
+      "after": "0dee23d1a8fef35bd68bfed1fdd3ddd414b9cd1446e613b2db130acb07067679"
+    },
+    "scripts/supplementary_helpers.py": {
+      "before": "3d586d0db8c33ffe2d773737299a47bd644e89597865c413c82362a1ca470d37",
+      "after": "ffbabe3e9af1273640ddd15a33503ffd7ff50dc72ac161e293c39287fa9e0d82"
+    },
+    "scripts/check_environment.py": {
+      "before": "be9817d78533bfee961ce1f63510a88832219675c6b4628b34955095717901a4",
+      "after": "523e03d85f75660a306775a9887825ebc41060e0447bac20a9109237c783e334"
+    },
+    "scripts/rerun_8cube_tissue_selected_alphas.py": {
+      "before": "07028a18a4872270c17b0fe5f424a7a5a522955b1037b3346dc5fb5533de2481",
+      "after": "07028a18a4872270c17b0fe5f424a7a5a522955b1037b3346dc5fb5533de2481"
+    },
+    "scripts/workspace_paths.py": {
+      "before": "6a2c63fd9b105ad6a02fd87598c344007b37f9d950baaa418a1d477b29eb6ebc",
+      "after": "ae01b61590ff80a9735ad469a0b1d1164581760de300f07bcff270883de6ec68"
+    },
+    "scripts/rerun_fig2_go.py": {
+      "before": "a813f1fb7ccbef8568f5a6bd911fefd4ef6f4799b100d8afcfb6322149f78b6e",
+      "after": "5db3902cba4b75245b8e1966e4ee1afdddb429ae5212a16efdc0a3b4b3f5138b"
+    },
+    "scripts/fig3_annotation_stories.py": {
+      "before": "c33ed3beadb36d6e8a1ab5d62bfdb41b2a0a95d213483e056ea1fe08a3e4b479",
+      "after": "b2010d33d3e6d073e9bcc09b3bfbbe688d18a271c9ceb107ed7966909ae5f11b"
+    },
+    "scripts/supplementary_benchmarks.py": {
+      "before": "5783cdfdd49e912b22b05e8dc9d4e05f79cd933d81d1e75e224ad15f1224ad0a",
+      "after": "f0ce792cb615ed400e8e4f6887ff74781b6f9b7e36de7aa2db3cd5d1e5fa9ce8"
+    },
+    "scripts/subsample_alpha_benchmark.py": {
+      "before": "57fd14ca0dddb556803f97460a80e3a7a8ba91ecc811504907f0ec837c9fdfff",
+      "after": "528fbb0e409e3236eeef1f69d7a33c3ec591a6581eb4b3fef137237b2c801de9"
+    },
+    "scripts/refit_fig2_merfish.py": {
+      "before": "9abce856c666036c64d98fec99c23f83fb7f32dd8aa86bc72dfecfcac90b8524",
+      "after": "be4abc02ad5e0d380e516087a353a130c359e85cd00aaa7306bf61a0d19a01ee"
+    },
+    "scripts/verify_workspace.py": {
+      "before": "9775b80282a0be90525447fd0e67894c64141cda2fa3c9355771c1c6b82b88d9",
+      "after": "875dc8746ef2254ea05e05c6a52d4bc0f148cac42cfa6bbc8568f91ea150805b"
+    },
+    "scripts/audit_fig2_panel40_markers.py": {
+      "before": "c2fde624b2376bb7b3bd9a92d73672983f22db515bfab3b2e4b6714e3058231a",
+      "after": "aa1415108888e0dfc2d4fcae52a8ee956892829d11592103e50924fc4873c0f1"
+    },
+    "scripts/fig1_method_benchmark.py": {
+      "before": "3102b8d14408e7145a5fbaf467aab01e12e759b960f0ead6dc6807fae11527c8",
+      "after": "2b99b9a678a912db22fa2974614c0c67ba26415e0dd2dec18c237a8bdfa495a3"
+    },
+    "scripts/figure_style.py": {
+      "before": "b65b79c7846ecd1b02157f3d96f03ae5e3af4f397316161fa7e36fc7693defc4",
+      "after": "52b21aefdc7687fe4848e9f449da88636e45176ea614288410067c92c450ac42"
+    },
+    "scripts/finalize_alpha07_audit.py": {
+      "before": "b15566c8b7456a3a09547e525616c1573348eb58667afd5f1cfcea0d05c4bda6",
+      "after": "0fafe1177769ef94975f655cffdae0871a0f4bb3e6420e04ab0dda6243ae2908"
+    },
+    "scripts/build_fig2_panel40.py": {
+      "before": "0756d05166e3a34e61064ed3e9606ee1d6e65744134da6de0c3be577f6c2a62d",
+      "after": "b5763c079958590169420db63d0dd89bfb7abaa9473aee1a0da38238c93ae177"
+    },
+    "scripts/verify_supplementary.py": {
+      "before": "b98e918ce0e6e75394bbcf5fc4e9de01f32f24bb9dfab5bb5050907fd6c66e5d",
+      "after": "571d52dadb4fda984035dc73ee82170d77bd8677dc5fde5a3fe28b8e245baa2b"
+    },
+    "scripts/compile_alpha_sensitivity.py": {
+      "before": "00a0e3c3efffa97f85add40f5532d68ddd1af5c0140e21b2769a1b8170052e58",
+      "after": "4870d94088138d86d3c07c5b05e2cc0560fd3462923df80d4ffa6eb0e55d6c1c"
+    },
+    "scripts/build_fig2_go.py": {
+      "before": "a86d2d1138395eb6d43b7da08d509691c2a2afe2a49c35afb815e50fa67dbbc2",
+      "after": "cf7364fac8a03548044c0b34520f1f30ec782815067930b1820b2f4fdf3d071b"
+    },
+    "scripts/build_fig2_violins.py": {
+      "before": "6fa69eae9a838590c1f2442188b04e5a356d9f070961ea2c2932d902f66880dc",
+      "after": "6fa69eae9a838590c1f2442188b04e5a356d9f070961ea2c2932d902f66880dc"
+    },
+    "scripts/reselect_fig2_panel50.py": {
+      "before": "9e7954683c93d431c94b490a462db05d0c7a8c67491c3a774da8e8c3df3de630",
+      "after": "5fc9176d70d073a546cf35f1c5ab8d0a5408c41bc195e56f7010bc28d53c33b7"
+    },
+    "scripts/sync_manuscript_figures.py": {
+      "before": "7ad8b17c5deaec9fb329f17067d0e22083dbc8c9b874c49901ea953e0436e888",
+      "after": "ccb91b6a24e373cc042600559577af3bfc08f4f38c067be4ff20214e298e9b76"
+    },
+    "scripts/run_8cube_supplements.py": {
+      "before": "0296df1ed858836e846d8d693e0449f0d8c123a6b64dca317680e126b6155211",
+      "after": "027f4d95aa434dc59b767cc9331ca0a20d7a6a706b099a5482054fb688851f4c"
+    },
+    "scripts/rerun_figures12.py": {
+      "before": "db5f75828e3dc12ddfc0ae53dd7acd7a4ca3a04261fd620d040fef54ac7770ba",
+      "after": "8a9817e99166bdc0ce7d5b6826124b0bb276376a461b89ec1b7e09dc5fa22d9d"
+    },
+    "scripts/figure3/zheng_initialization/run_grid.py": {
+      "before": "96bb3b1e9656b83fdb3f47083525eb76ab529658b962bc57b26d33ab72b33a6a",
+      "after": "4656f7773027eb81e26b9051486d1281023d5dc3325bb273f5ebb8b7eb402213"
+    },
+    "scripts/figure3/zheng_passes/run_refinement.py": {
+      "before": "fe215eeb5f42ed237b0d60111fcb4ef3037a6d3b6bd53243623c3bc0b7579c94",
+      "after": "1ff9f1a32b937b9d5e3e85ccecad5f11e6cc4795fd20b210500e82435ed0e349"
+    },
+    "scripts/figure3/noise_source/poison_expt.py": {
+      "before": "4273e8c830310222cd4f6954031c24e50145cf2205812115457c13b77413e13f",
+      "after": "4273e8c830310222cd4f6954031c24e50145cf2205812115457c13b77413e13f"
+    },
+    "scripts/figure3/noise_source/centroid_check_flagged_cells.py": {
+      "before": "cb3df171f37e2029425fc63fa2be22e4c8dfa595aea5847630c0a4d8a3039f2c",
+      "after": "cb3df171f37e2029425fc63fa2be22e4c8dfa595aea5847630c0a4d8a3039f2c"
+    },
+    "scripts/figure3/noise_source/poison_expt_grader.py": {
+      "before": "068c06d3757ebc64d28939b21cff1d0a0085b7e66c7e2bd620902099c6dec562",
+      "after": "068c06d3757ebc64d28939b21cff1d0a0085b7e66c7e2bd620902099c6dec562"
+    },
+    "scripts/figure3/noise_source/poison_injector.py": {
+      "before": "567137a914dfb45e1b08cf316c265ca479a3b24c9baf4a9e50c86c85090d4113",
+      "after": "567137a914dfb45e1b08cf316c265ca479a3b24c9baf4a9e50c86c85090d4113"
+    },
+    "scripts/figure3/cortex_pca/prepare_cortex_pca.py": {
+      "before": "46b8991ca001255f446adf3db6f30a251a2aa49f4645c6b35d3bb064f9bf67aa",
+      "after": "8bae4551e454853f57d1745af52d26d3a90b18c4ec0b4861d3293c9f65a92e47"
+    },
+    "scripts/figure3/zheng_screen/run_screen.py": {
+      "before": "1de17805660045327d225e8b085a8c1a5f4a27840ad9c2298f76f0b0963582f0",
+      "after": "c931e0b73a30166dbb36f8b35d33c93b79c24b515407ec491e021ce7bcd68da7"
+    },
+    "scripts/figure3/zheng_screen/plot_many_to_one.py": {
+      "before": "99a47e589dbe20ce24538ba8dd472b432e6fa45eea20dc2ce74e1bcbcc01ce52",
+      "after": "92d4a170c0f87d2608186dc56b6a3ab76f1c1c06874d939a4b72a5fb71e8cff0"
+    },
+    "scripts/native/scripts/native_io.py": {
+      "before": "08d14c1ff976666fa5755761e520da5b4c259e52e1ca4010e868589a52488237",
+      "after": "b41f415e6f3dba8d13cc4a32c60dd4c51885c1727843557c871d6b57dd1a3af7"
+    },
+    "scripts/native/scripts/run_comet_native.py": {
+      "before": "250455e5effcffe8a464436ee450d4724187de34f886a941d00d5aa63fdb1727",
+      "after": "f72341eb5ced2c0e1bed633f67e675abecb2a560255cbef6830629fd15c81396"
+    },
+    "scripts/native/scripts/panel_adapters.py": {
+      "before": "4ec4b7f6ce490d2b3bb721861230ac68ca8fa50718b5585c4911236762f6c339",
+      "after": "de37fcbc6ff5656c74cf0d64e47a9dd8c92095a7b6ee9574eb6d071549fe2a4e"
+    },
+    "scripts/native/scripts/benchmark_execution.py": {
+      "before": "192cc3b36e1aee7619a3ad6f9743fff14b5c7bf1d43703cf5df69925ab554ba9",
+      "after": "c3507668efaed1611a4c1c47e865aa179c27a912750ccc6c11279cd91b0774fd"
+    }
+  },
+  "figure_labels": [
+    "Figure1",
+    "Figure2",
+    "Figure3",
+    "Supp1",
+    "Supp2",
+    "Supp3",
+    "Supp4"
+  ],
+  "canonical_directories": {
+    "figures": "figs",
+    "scripts": "scripts",
+    "results": "results"
+  },
+  "collected_image_evidence": [
+    {
+      "source": "results/figure1/methods_fig.pdf",
+      "destination": "assets/methods.pdf",
+      "sha256": "35c9a0ef4631057a8c3f91cf5584b2d44e065fc1de5e34869f26f1c9fb6735dc"
+    },
+    {
+      "source": "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf",
+      "destination": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.pdf",
+      "sha256": "5936302b0d0f45d04303accc6583fd9aab4daaee6652e5e195cb10ec6917f369"
+    },
+    {
+      "source": "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png",
+      "destination": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.png",
+      "sha256": "28bd05df4d0f8d76dbf0fd1191253bd23d5fec44936b4b0fc1100e6061733a90"
+    },
+    {
+      "source": "results/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg",
+      "destination": "figs/diagnostics/evidence/figure1/native/runs/figure12_cellsieve_alpha0.90_20261011T193821Z/previous_figure2/figures/Figure2_cortex_merfish.svg",
+      "sha256": "5780bf165f925bef9a3adbfead7407f0c2511cc0996699281817e4350c3be0c7"
+    },
+    {
+      "source": "results/figure2/results/panel40_marker_audit/panel40_marker_audit.pdf",
+      "destination": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.pdf",
+      "sha256": "ac2cceeee3852a076bdf495ed88bbc2c520b255549516b45664ab88d244e7d3c"
+    },
+    {
+      "source": "results/figure2/results/panel40_marker_audit/panel40_marker_audit.png",
+      "destination": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.png",
+      "sha256": "aac1ba4248801168ace8d2a4148f9c14351efe731360fe52ac73850cc52d5c52"
+    },
+    {
+      "source": "results/figure2/results/panel40_marker_audit/panel40_marker_audit.svg",
+      "destination": "figs/diagnostics/evidence/figure2/results/panel40_marker_audit/panel40_marker_audit.svg",
+      "sha256": "1b5e632b5e54c1e98c0eafb8a878f5ec26095aa825cf4115070bbf4e06f9fd76"
+    },
+    {
+      "source": "results/manuscript/previous_figures/Alpha_subsampling_all_tissues.pdf",
+      "destination": "figs/diagnostics/evidence/manuscript/previous_figures/Alpha_subsampling_all_tissues.pdf",
+      "sha256": "142aa6e4bb4261f98184cac5d29ec052c1c1dd64b58fa50c0b7d0712161fa695"
+    },
+    {
+      "source": "results/manuscript/previous_figures/Figure2_cortex_merfish.pdf",
+      "destination": "figs/diagnostics/evidence/manuscript/previous_figures/Figure2_cortex_merfish.pdf",
+      "sha256": "40625748e4c2f69304765f9b95e095db67feb91f453870515dd37661e3457cae"
+    },
+    {
+      "source": "results/manuscript/previous_figures/Figure3.pdf",
+      "destination": "figs/diagnostics/evidence/manuscript/previous_figures/Figure3.pdf",
+      "sha256": "a035a13605ab8831a1ca00f6699d42996b718ec66bf827582f811997cfd4a4ad"
+    },
+    {
+      "source": "results/manuscript/previous_figures/Supplement_Figure2_cortex_eight_strains.pdf",
+      "destination": "figs/diagnostics/evidence/manuscript/previous_figures/Supplement_Figure2_cortex_eight_strains.pdf",
+      "sha256": "0cce6cf2f8ae7f30471a72c13e061f0cb6a3fd41e5fd79d327c23dee8999d934"
+    },
+    {
+      "source": "results/manuscript/previous_figures/Supplemental_Figure1.pdf",
+      "destination": "figs/diagnostics/evidence/manuscript/previous_figures/Supplemental_Figure1.pdf",
+      "sha256": "23f7cabe7139f7b1930336339f262d927d58b38dd8f91f23f80dcd9509631f26"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.pdf",
+      "sha256": "74d20c1fdec0e1382d5bc16c61b4e57df7c397dfa25fde1e0eb3e0842540071e"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.png",
+      "sha256": "f941b872cc686329d6904fbd14bb13fc2cfb6a715d41182533dc8616b6c79b90"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Adrenal/Alpha_subsampling_Adrenal.svg",
+      "sha256": "ab2a8d55debe868571ad9d2825c97f2c062f2e9d6296f114cffe06ac0f8e76b7"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.pdf",
+      "sha256": "7751f6cc0cf0088bbab95c5e75ece3f65721e34330ce12c4792a33f22830e6e1"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.png",
+      "sha256": "4fa160ad6d86a3c52cef2f3f84297fdc7e1260bb5d31b56bf3113029813a1d2e"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/CortexHippocampus/Alpha_subsampling_CortexHippocampus.svg",
+      "sha256": "c167821e59822bdd8662673b88c0db065f03ae2a7e0bbc289f1f44ed1168b911"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.pdf",
+      "sha256": "65f71d0b15408726855a72f6320ac288cd7c90fb2978e2b3520cfdfcc50bef59"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.png",
+      "sha256": "43ba16018ec9014fbfc541e0bc49a8e5aa5ff03c5cbb517073a2278e84628e98"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/DiencephalonPituitary/Alpha_subsampling_DiencephalonPituitary.svg",
+      "sha256": "869a83bb7136c7bae5a54634258974abea5a629f6f19829a17badb7a000153e9"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.pdf",
+      "sha256": "a980e16099b6a471c91262b2331509197921dee2f5980cd92e1947d2b95209ff"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.png",
+      "sha256": "83378e0345c72fa355074f59ff54a142405837101fa9b8620cdfa4672b3bea66"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Gastrocnemius/Alpha_subsampling_Gastrocnemius.svg",
+      "sha256": "f8e645a0ebf98482e3c3a4bc6e3d17b020199521f04607d8add7aa9eedf28b2a"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.pdf",
+      "sha256": "a1c7c786f95c3e06221b663dab538b5cfd47d1c5c22b0d051a29c42a1883aa46"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.png",
+      "sha256": "c374d1a10ca97fdb2d15b32a5357fbe27248afdf2416cd58c7eaa5aef8b76fcc"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsFemale/Alpha_subsampling_GonadsFemale.svg",
+      "sha256": "4fe2d7118c3bd38a9e3e59cb9f76816dd24686896577bf1ba7dfe04ea181df95"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.pdf",
+      "sha256": "10bd5930ddcabd17c57b6e58bdeba22478634841c15773ca246a3b3cf8f06f98"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.png",
+      "sha256": "e4f4963593265ce1896400ae2167d1219da3c675bb481075e04c4baafc9b3a78"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/GonadsMale/Alpha_subsampling_GonadsMale.svg",
+      "sha256": "071560c1e8258944e06ea148727b18ece2c98682e9beb610ba002e8f4b921477"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.pdf",
+      "sha256": "c9de16453fd341a55efbdd7e1efac21733096a49b76fc2def6516a9a1024859c"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.png",
+      "sha256": "3a7148924b0e7918c31bd0cb8f1e9bdd2bd7b8cd4d68a42e7ad0834dac0ba1cc"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Heart/Alpha_subsampling_Heart.svg",
+      "sha256": "725ade25b01a32c5925ff883c108b32e4a6900b8f7138ecd8cc3923ea8844109"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.pdf",
+      "sha256": "b093dc96dc6ec46777a7b706f0f235637b7ef85012b417852270e59c04a87d96"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.png",
+      "sha256": "973841f9a14ee39c3ebec757aec6509076b238e41302958e00c435494f8e7348"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Kidney/Alpha_subsampling_Kidney.svg",
+      "sha256": "4346b8ff8fd5f77e431f2d1570ffc9ccc323ff0defb062eaa4ad40c761101e4a"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.pdf",
+      "sha256": "b0bb48ab7ad4f519f516a466a21b7de8629b56d5595d701fbbf32810b2ce192e"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.png",
+      "sha256": "f4612e18c1467565e2fd7d8fdba9a573c4b9f8cf588e2bee5583d0ca0f7670fa"
+    },
+    {
+      "source": "results/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/alpha_subsampling/Liver/Alpha_subsampling_Liver.svg",
+      "sha256": "dc5a27992580580650225a7e5ec06cc2fb06cdd4206a37ca9f0d20be42af707c"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+      "sha256": "6165f9597357364f5088b9864a2776e7ea48e3194d93f89ee2d64ae8f8eff7b2"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+      "sha256": "b3d73e28e7423e9fe1d62bc24f3aa4d897338bd3ca7136a647e878d0bd45e9ad"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+      "sha256": "2ba140daaed96e64618ad6afd74ddc0bb39b447ab58812b5d927ec9f722b66e6"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+      "sha256": "0c0f8bae8a77933d941dc6630f125a2835345a31e6a5e12b09ce86cc63ac4329"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+      "sha256": "8105bf9de88d8f309b92fd4a6af0be839c74ac2c3b5e058b32d4ac039fee2694"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+      "sha256": "a5314a8a2a005b4b5f7a3812a8e98067c23c6eead83b8f8fc112393144b5edac"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+      "sha256": "0e76e13dc127ac58af3deb10d994c2122e410547723b19cdf783d8efe15d58aa"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+      "sha256": "7c5b93854982ef1ad3ed18a91ae55a913ecc7e5913893fcfb403b3357dae9807"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+      "sha256": "933ff976fc79dcc583cbc98f63785ca34ca2cd2f16354a2202245cc8ac98fbe9"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+      "sha256": "1377956eb2ebcf4ea52d69c3491a7a2b0fe5177c8970082efa269623ca117f15"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+      "sha256": "cdcfba9cac7077ea2f053d6faffd0ac72f09340c9093217570a251dcd02704ef"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+      "sha256": "e717d4fe732582ed8659e81f504bb53c67fb6fb9be79a7379e5aaa762e4d8d3c"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+      "sha256": "5fbf02e5767cca96faffdd41c402764bbae3ce3ba0dc50ecff26b11f6249aca2"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+      "sha256": "63ae2dc74dbc163cc6de136c85db173d5c058a461930c6acc5b6095a27a64851"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+      "sha256": "ee55e5dd78d5e72b0e61bcea0e7256ee73ef2622522c08b22ed44af39999921a"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+      "sha256": "1ad3be22498b2f113d074b551d5263edb0c34fde8021c6bf4ca074bb40522ffe"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+      "sha256": "284df96cbcc499dbea5d1c1c12265bc439fa6d919c1cdfb94167bf11d7c10965"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+      "sha256": "e857c2acbd4013bff20788ab3c05f4d7bc7c51510488176393ac714300b88493"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+      "sha256": "f417b82bd91d047314c0dc5701fc270a7b2603ff6e685c0cd1f9de2cd65b6f27"
+    },
+    {
+      "source": "results/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/fullinput_benchmarks/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+      "sha256": "3ea58cbb07e07ee9b2eaa47981c6d1cbaad59f4cf74bf9b693fdce3665ceeafb"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues.pdf",
+      "sha256": "924ff230f736675799b000c2d75986b421986c4054e536835d8c450d7a199e07"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.png",
+      "sha256": "c32d5a169622ca1f4b191dc8975f6e4ed9fa5c75ee43f41db29a226fd2a7b351"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_accuracy.svg",
+      "sha256": "b7cbe632317930e1becbecb56dcd8659dac9459418648397f879f6b01bd49eb1"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.png",
+      "sha256": "1b71cdfcec05689bfe580d09489d277957cac469ed33f32a009fa4b587363ced"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_accuracy.svg",
+      "sha256": "57241bc0cb5aebe76dc19fc3d323b1c385e4059b6df5f1ddb7f58f4dfb3e8c79"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.png",
+      "sha256": "45e66cbdde6e9864683b67d1e1a095469b35c06f3960e14b6d9fbf4df526e55d"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_cv_macro_f1.svg",
+      "sha256": "8d38188f2facdfc0137c40057ad58850a44550a909c34b29c0580fd72b6af71a"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.png",
+      "sha256": "7aa704a8330efe514f44cbb67202ce69ea63e35bb615e714d2530d25b9d2c50b"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_elapsed_seconds.svg",
+      "sha256": "19b89a7f72f0f9074a2b8fa67029bea69d1e60692b697bd903b1588afa8eb3a0"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.png",
+      "sha256": "76a64a24b5a0902e4fdb633defeeea545c41859b3cf0f7967c3a5676e01eaead"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_macro_f1.svg",
+      "sha256": "de75907ee3b78521cc478a3a4794f32152721d242a29995bc9f0077ca379ea8d"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.png",
+      "sha256": "38aabaaefd3f65282a27f2dd40b591a7da474634df540f2e74bdea44d038511f"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_B6J_nine_tissues_peak_rss_mb.svg",
+      "sha256": "bba76e9d538035d49e3e74c3da2a8485c1001f01e36fb009293da1ecc0eddcb1"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains.pdf",
+      "sha256": "264bab812871c76917a401d112d5f11382de7c79bca254015aa8c533d756aa71"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.png",
+      "sha256": "288aeae9ac495cc567856b46047a88d67b62743bb77f26502a122507f5a5c8c3"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_accuracy.svg",
+      "sha256": "f982c32c4c6044aac3dbb2b10bb6fa8d53f4600241220e1576561b973c894c2b"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.png",
+      "sha256": "05455a4ad9808369dce94bf789970f468d4d5b3f59646ae1c7648adbdfb408ea"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_accuracy.svg",
+      "sha256": "09f56147e7496d663cead1394a75b6a20d9e06653da5c9801caf894b27eb31b6"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.png",
+      "sha256": "9a443b691f1535c29ea46c005bacc1b6b0b9d66c3b78fad8d28608b4507f46c7"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_cv_macro_f1.svg",
+      "sha256": "06a9d5366c0e767b3fa08a5fbeeebc88bd3e44e2474c7be5de569d6790e31df4"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.png",
+      "sha256": "2a8db90347fea7d3998fb6c831872d4e62dec4ba6af787890427d0095a6c0a0f"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_elapsed_seconds.svg",
+      "sha256": "a381a4bd6a2c70f23d327d2faefc1848e1ccd40f2a866d2ffab185b0779289fb"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.png",
+      "sha256": "849b73107b658188ecbf324eed99a17c3a1e8d9ab1446f6c952c8c60ad55784b"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_macro_f1.svg",
+      "sha256": "b66ea6a03335aa880d7ce0ab52c781384f18c40a2b43146e04b68231c01ac201"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.png",
+      "sha256": "8c89afbfb829db6d651f00e311a7fd1f613a6f517cdae21971c45eb1d667ec9d"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_alpha07/figures/Supplement_Figure2_cortex_eight_strains_peak_rss_mb.svg",
+      "sha256": "9f8ba983a9256a2255b5a6b78fcce28b3df87fd491d01f7e740366c0368f9092"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf",
+      "sha256": "456091328d271abd131a32057ef2d36202af69fff8a66419d58583a9b4fb8a09"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png",
+      "sha256": "6165f9597357364f5088b9864a2776e7ea48e3194d93f89ee2d64ae8f8eff7b2"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg",
+      "sha256": "b3d73e28e7423e9fe1d62bc24f3aa4d897338bd3ca7136a647e878d0bd45e9ad"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png",
+      "sha256": "2ba140daaed96e64618ad6afd74ddc0bb39b447ab58812b5d927ec9f722b66e6"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg",
+      "sha256": "0c0f8bae8a77933d941dc6630f125a2835345a31e6a5e12b09ce86cc63ac4329"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png",
+      "sha256": "8105bf9de88d8f309b92fd4a6af0be839c74ac2c3b5e058b32d4ac039fee2694"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg",
+      "sha256": "a5314a8a2a005b4b5f7a3812a8e98067c23c6eead83b8f8fc112393144b5edac"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png",
+      "sha256": "0e76e13dc127ac58af3deb10d994c2122e410547723b19cdf783d8efe15d58aa"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg",
+      "sha256": "7c5b93854982ef1ad3ed18a91ae55a913ecc7e5913893fcfb403b3357dae9807"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png",
+      "sha256": "c99607d7169f492690253287470c44b168eafa7575144347cbd0269179094823"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg",
+      "sha256": "9241b0fcc59b8ca587413a595952d1437ce7e509b96e4a493e500755d05aaa88"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png",
+      "sha256": "933ff976fc79dcc583cbc98f63785ca34ca2cd2f16354a2202245cc8ac98fbe9"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg",
+      "sha256": "1377956eb2ebcf4ea52d69c3491a7a2b0fe5177c8970082efa269623ca117f15"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf",
+      "sha256": "4d324709d875e67f4d5d2b10cd9f0733b8ec3f92eac9ac2bcbab70cf1b57004b"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png",
+      "sha256": "cdcfba9cac7077ea2f053d6faffd0ac72f09340c9093217570a251dcd02704ef"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg",
+      "sha256": "e717d4fe732582ed8659e81f504bb53c67fb6fb9be79a7379e5aaa762e4d8d3c"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png",
+      "sha256": "5fbf02e5767cca96faffdd41c402764bbae3ce3ba0dc50ecff26b11f6249aca2"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg",
+      "sha256": "63ae2dc74dbc163cc6de136c85db173d5c058a461930c6acc5b6095a27a64851"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png",
+      "sha256": "ee55e5dd78d5e72b0e61bcea0e7256ee73ef2622522c08b22ed44af39999921a"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg",
+      "sha256": "1ad3be22498b2f113d074b551d5263edb0c34fde8021c6bf4ca074bb40522ffe"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png",
+      "sha256": "284df96cbcc499dbea5d1c1c12265bc439fa6d919c1cdfb94167bf11d7c10965"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg",
+      "sha256": "e857c2acbd4013bff20788ab3c05f4d7bc7c51510488176393ac714300b88493"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png",
+      "sha256": "521ab506ad3888014c10458296b15cf78bd0066b294e518bb3e0c829c9b72117"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg",
+      "sha256": "39c3ca5313e3181000433b955670c95e6a005bd99c2b3aa03d4a25303906122b"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png",
+      "sha256": "f417b82bd91d047314c0dc5701fc270a7b2603ff6e685c0cd1f9de2cd65b6f27"
+    },
+    {
+      "source": "results/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+      "destination": "figs/diagnostics/evidence/supplementary/local_archive/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg",
+      "sha256": "3ea58cbb07e07ee9b2eaa47981c6d1cbaad59f4cf74bf9b693fdce3665ceeafb"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "created_utc": "2026-10-12T18:39:54.498940+00:00",
+  "scope": "Delete only obsolete sibling input caches and obsolete screen scripts. Keep complete active sensitivity, full-input baseline, and selected-alpha runs including all matrices and solver artifacts.",
+  "retained_directories": [
+    "supplementary/alpha_subsampling",
+    "supplementary/8cube_tissues_fullinput_alpha07",
+    "supplementary/8cube_tissues_fullinput_selected_alpha"
+  ],
+  "validation": {
+    "status": "complete",
+    "paired_alpha_runs_verified": 900,
+    "selected_alpha_benchmark_rows_verified": 255,
+    "full_input_cohort_hashes": {
+      "Adrenal_B6J.h5ad": "9049c9fd196cdc16af62b5fd35a044401d2663958239d97abbf2b81282ccff31",
+      "CortexHippocampus_129S1J.h5ad": "d6391b068a21458d90efac0f39b6fe0d80cc5ed7d360012f10c7dac096b04fb7",
+      "CortexHippocampus_AJ.h5ad": "410cc1f969cb776e28f91576d8a22be0785cfbefc0ed670f75ff32a7a03fc211",
+      "CortexHippocampus_B6J.h5ad": "a1157e227c48c9518c29bfeb8c2e909057d1336137705502144dcab3bbf6ddda",
+      "CortexHippocampus_CASTJ.h5ad": "44259cebf0ddc9da2a874c19cc05ab271f487855ae1f13f5d8d9ce1821aa0b8d",
+      "CortexHippocampus_NODJ.h5ad": "d47911dfc0ee451f3f4e8fe4093ecd1e042dd4bd9151ad897b4a79a009d3d3b9",
+      "CortexHippocampus_NZOJ.h5ad": "ab21851d2c6b8bbacfcc4af9f363d3ed086ad2460b7880f2451bb0d3a340e824",
+      "CortexHippocampus_PWKJ.h5ad": "fa9f7927357e22569e3f924fc349e155ec816cef7511457b7d1dd8d464579ed4",
+      "CortexHippocampus_WSBJ.h5ad": "311833ee9d309ba1d842a2cdd9fcee8f97531dc1c448b65756157a8e97ec4fb7",
+      "DiencephalonPituitary_B6J.h5ad": "ca870c43444df37539189d6faa2c776cb37582edbbdedb080f8fa5d3f59e112d",
+      "Gastrocnemius_B6J.h5ad": "50bf7738a1ec34a957ba5bd65e1c608f3e9a390a014fb744d445bd1ade0583ad",
+      "GonadsFemale_B6J.h5ad": "b51924e6a7456cdad349c2541e25df445396d6862623d871e67e3c0e982ed3d5",
+      "GonadsMale_B6J.h5ad": "1159b873b852bb30ed5235320e07154d4236438b0c8f6d6b877f031ec2fc8f99",
+      "Heart_B6J.h5ad": "7cfdd3577a2006a82543da6f5d28c8f7a561fa9ef320b4c42201c121dbcc7673",
+      "Kidney_B6J.h5ad": "a4b7e98f9fd89381d208696cd2aaa89fed32884ebd9af148174265393cf426ff",
+      "Liver_B6J.h5ad": "d0ea143f28d4a4c8f04c22d9880fca90e70a5b1b64c318af640bfcc3d9f88ed2"
+    },
+    "figures_sha256": {
+      "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.png": "f48cf9fbb17ead592a4e2386b8ee277e9b819ba73476ebc3de4361057b0bb4ec",
+      "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.pdf": "86acee41067e2b329b37f14b8f9b9b41a007409b9a8183a35a0254519e758ec0",
+      "supplementary/alpha_subsampling/summary/Alpha_subsampling_all_tissues.svg": "1deef94be8a11003361fbeaec862e3f81892a29e67aad930af0b2b5b517f71d2",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.png": "6246d355d556843252f37bc903782223588a9943c54b7fbb203f5e602615f64d",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.png": "7171761633fee20aa3aabbf22a0804afca42e85f3dfef639218977665b8f04b1",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.png": "7c7f6aaa2ddcda0f153b09b21e2cc375c74202c77d3ec805071393e54c4d0ea2",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09.pdf": "cfb70a5f14777890cba004daa5e69e05a6a3ea87053567b663b03f5308a1809e",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.svg": "b24726beb95f685b2d458a3f8bc2c06fb0187563706d1b723c925935b4b32f78",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.svg": "5d1da484a7df18705b0d9c17e2f5fe24a777fdc3c8e3c15c663d9bfa8b83372a",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_elapsed_seconds.png": "9dc5dae262dc44c5d9b3acb9794e21c15433ed98ec95f7a3610c82443e501b38",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.png": "54824b50795f3be97c39b8859a8033ae6adc3896801ef080e9a62f2dd1f7d8bf",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_peak_rss_mb.svg": "7fad392a793ad8d2c1a22f790e337e5f2aab80a0f0cb07855d289d90b365d33c",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_accuracy.svg": "b3d62e34ef7f674f67f93387f6a41e5e4b213a21b1fb1c9509a98b3a904d00a3",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.png": "1bdfdf9d23ee26a7fe9017cf288c9cda569fce968d30bdc8ddbaf403b6431363",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.svg": "b235467d616469500c1ee0e9e958ebdd343c01b28c7abdfeab0002e6482aff8e",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.png": "c700ef22361800f02fd1e9bffdca7f289c64d5af77e699c916c654e65dd9ad0d",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_macro_f1.svg": "662726581849e469ebedfbd15042089b362dda5aece2fad3ea56a1c2069443b1",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_elapsed_seconds.svg": "c6af84104bab885e792cb285824b8ea02670ced0badbce690ab9d2122ac7d119",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.png": "bfc7ab608f7292813bd9aa012861260cfb86ae9f16c08b575030fffa84ec7ed6",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.svg": "b307fd73096d0a49751f337a2551c80ebcb52e0b1618da53e48f19424f779433",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.png": "d102ac3026e3a6de4666df0c65ce589335f662da8c3773f7b9b9f67b6643d9f4",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_macro_f1.png": "4c2fd38f7f969f2c94cae5f95d49fce8f2faf926d927a7218575f31c5056a66a",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_peak_rss_mb.svg": "aa08aaf0642083bb42ea0ab67f31da6719c84fc62d901697a5ac66a74b86e2a3",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_macro_f1.svg": "39508ef17e352c04c1c6c92e1f78f8682d06231d73300e7824a13bfe2f4daa03",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha.pdf": "acb88b15b41606954598ff14d172203b12e47d295fe144d6974fe6de5f80a770",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_accuracy.svg": "6994e7e1b7064e6706bb2c7d9f43fca7af2d84af3aaf0d061c2079708211098c",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_cv_accuracy.png": "c536433f2ee3396a7d04e1d52ea0139fe097b3dd37ef49f39e87bd768340b01b",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_B6J_nine_tissues_selected_alpha_cv_accuracy.png": "ff69d04df5e5677b7af090571e82e7243d6ad63d3770076cf6e0fdfa2c57713a",
+      "supplementary/8cube_tissues_fullinput_selected_alpha/figures/Supplement_Figure2_cortex_eight_strains_alpha09_macro_f1.svg": "abce5e8912e936518c340f60349c7d7e2d86b6b844e60cbfdbbc34a7eb5cb2ae"
+    },
+    "verifier_sha256": "bd6ba7a86f1458301ed72f7414904f7becabf75f84e34b7b5908dba9526736b6"
+  },
+  "removed": [
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/GonadsMale_B6J.json",
+      "bytes": 645,
+      "sha256": "9228c56712bbcbdacecf8a24cf6853835449c22adc759a83cf7896c95d8e7678"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_AJ.json",
+      "bytes": 663,
+      "sha256": "d0a8a6fac6d30247cb29cb3e21acad016a091082e253853091891318072ed044"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Heart_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 142247272,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Heart_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Kidney_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 375019130,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Kidney_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Liver_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 252232232,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Liver_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/GonadsMale_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 185654286,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/GonadsMale_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 507727595,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_CASTJ.json",
+      "bytes": 672,
+      "sha256": "97f3c1f9293e8f6e815a7323274761f4ab4e6039672d95aeaea4d15372df8267"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Kidney_B6J.json",
+      "bytes": 633,
+      "sha256": "660da8499d4f91b16f88724b8d7b10dbf8b8adeaf54298abefc1262cf0b8cc75"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_AJ_all_namefiltered_genes.h5ad",
+      "bytes": 609136169,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_AJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/GonadsFemale_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 160337799,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/GonadsFemale_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_B6J.json",
+      "bytes": 666,
+      "sha256": "b549081ca7df916e83b4626b89f1869a2c82ffb20e81d3f860edf4b1a1736bf6"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_129S1J.json",
+      "bytes": 675,
+      "sha256": "fa786438295bb481e5692251e7ae20b0b22156f6906303900794df3ddcfc5393"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Heart_B6J.json",
+      "bytes": 630,
+      "sha256": "61258b67f5d5e593d55e6ee3f2a772f6b6cdef9ed63ab3a048352beb706169ce"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/GonadsFemale_B6J.json",
+      "bytes": 651,
+      "sha256": "432f0018495f55faa5af3d08befa3f3c05cb83729f1dc1a94c4f1329967a1979"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Liver_B6J.json",
+      "bytes": 630,
+      "sha256": "75b139e3ab64a7d23e5bd73260a0ebef38c53e5644ff85f8d92bbae2b3923d60"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_129S1J_all_namefiltered_genes.h5ad",
+      "bytes": 491834985,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_129S1J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_PWKJ_all_namefiltered_genes.h5ad",
+      "bytes": 534005745,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_PWKJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_NZOJ.json",
+      "bytes": 669,
+      "sha256": "a2226bd0ed50d658bdc02744c8eb1baa7442087182fe3f08d3c0b934a43a591b"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_NODJ.json",
+      "bytes": 669,
+      "sha256": "27b4e5133e828e91afc969e35176638b86021a9ffd0d501a6c780095150aa8bf"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Gastrocnemius_B6J.json",
+      "bytes": 654,
+      "sha256": "9ff20f9ff4ff10a88cc916f6cf540dd438fc3875719a6c8b9143f1288d3a6c99"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_PWKJ.json",
+      "bytes": 669,
+      "sha256": "af93884bcfb0caa4dabf1f33b2b6b80f84c93143f69bbd3927ff6776fc7d468e"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/DiencephalonPituitary_B6J.json",
+      "bytes": 679,
+      "sha256": "25347803e80a0746b66ae18158c0e25dc70779ce694c2b8112c43fb925a7db5d"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_NZOJ_all_namefiltered_genes.h5ad",
+      "bytes": 633515954,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_NZOJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Gastrocnemius_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 179790997,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Gastrocnemius_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Adrenal_B6J.json",
+      "bytes": 636,
+      "sha256": "a70cd8c3e96d297a244ece29fd9e4cf625ab56c93cdf6ff12567e051a7021372"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_CASTJ_all_namefiltered_genes.h5ad",
+      "bytes": 520985894,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_CASTJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/DiencephalonPituitary_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 484169861,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/DiencephalonPituitary_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/CortexHippocampus_NODJ_all_namefiltered_genes.h5ad",
+      "bytes": 614358763,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_NODJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_alpha07_20261004/h5ads/Adrenal_B6J_all_namefiltered_genes.h5ad",
+      "bytes": 176929818,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Adrenal_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/GonadsMale_B6J.json",
+      "bytes": 799,
+      "sha256": "ee40d986664ec5e0bfa84ced59d85685040da33ff49bd200ceb1783c5bceab0a"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_AJ.json",
+      "bytes": 823,
+      "sha256": "ee6bb2bd6a969431ccea38595f3180bb4c313b9a5a24a906fec7ed8876f2a280"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_CASTJ.json",
+      "bytes": 835,
+      "sha256": "4ac1e805c4fbb57ff93b3aa5186756ab87594f2add653bbfe542bfe1096d352d"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_WSBJ.h5ad",
+      "bytes": 470022336,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_WSBJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_NZOJ.h5ad",
+      "bytes": 633515954,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_NZOJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_NODJ.h5ad",
+      "bytes": 614358763,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_NODJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/DiencephalonPituitary_B6J.h5ad",
+      "bytes": 484169861,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/DiencephalonPituitary_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Kidney_B6J.json",
+      "bytes": 783,
+      "sha256": "13a073b504cafd901d0b3e5cd2059687011fead9839560ee09999d954884eaf2"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Gastrocnemius_B6J.h5ad",
+      "bytes": 179790997,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Gastrocnemius_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_B6J.json",
+      "bytes": 827,
+      "sha256": "893335446dd7fb39a52c23308ae2d33f685d43417714c8b5edfec7f3f5cdc76d"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_CASTJ.h5ad",
+      "bytes": 520985894,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_CASTJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Liver_B6J.h5ad",
+      "bytes": 252232232,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Liver_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_129S1J.json",
+      "bytes": 839,
+      "sha256": "1c6cd10346b74f5872f8af436a3293abd84400e839fea63a09df93a24bee48de"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_WSBJ.class_counts.csv",
+      "bytes": 801,
+      "sha256": "55546dc8bf6c923c09a5c6907df5b73f694fc2c518d695dca209699908f1336d"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Heart_B6J.json",
+      "bytes": 779,
+      "sha256": "9e36cd3ec43089b8e403f2f8fc7016478263203e7d5fdd16badedb3b625b8c5b"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Kidney_B6J.h5ad",
+      "bytes": 375019130,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Kidney_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/GonadsFemale_B6J.json",
+      "bytes": 807,
+      "sha256": "d5a5eeea6fbcaccd50aef199de9159b5877f9cd117af8acada09ee613705c176"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Liver_B6J.json",
+      "bytes": 779,
+      "sha256": "f8a44aa8cf938b2aeeb6cc907e4665b301fd5862254516b8cbf8cf297fcaa328"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/GonadsFemale_B6J.h5ad",
+      "bytes": 160337799,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/GonadsFemale_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Heart_B6J.h5ad",
+      "bytes": 142247272,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Heart_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_WSBJ.json",
+      "bytes": 684,
+      "sha256": "2167b7ccf101c46e9d090933e08355c49a256b3a6dd16044eb3751e1198f890e"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/GonadsMale_B6J.h5ad",
+      "bytes": 185654286,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/GonadsMale_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_NZOJ.json",
+      "bytes": 831,
+      "sha256": "9d8b64cfaaee7029cea6b41eba4a498f6102ad098f4c6a5258eac06126feb8f4"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_AJ.h5ad",
+      "bytes": 609136169,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_AJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_NODJ.json",
+      "bytes": 831,
+      "sha256": "9fd865076fea9c444b74d08fc5cc5ecedecd4a0cd772ea442cd8aa5deed5e2fa"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_129S1J.h5ad",
+      "bytes": 491834985,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_129S1J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_PWKJ.h5ad",
+      "bytes": 534005745,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_PWKJ.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Adrenal_B6J.h5ad",
+      "bytes": 176929818,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/Adrenal_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Gastrocnemius_B6J.json",
+      "bytes": 811,
+      "sha256": "20ca6fda255b10acede25d6439d6c75c8924c9ec988cb28b1a5a89e27ddcc6fc"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_PWKJ.json",
+      "bytes": 831,
+      "sha256": "408a257f986e27739fb88f40381be8dcdb3908bfd685c4057bd8bf0e8b4ea1a8"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/DiencephalonPituitary_B6J.json",
+      "bytes": 844,
+      "sha256": "48aa49c47f1ff971305c1e68ed717a192e2d167ad37a67fc857a78cec7d221ea"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/CortexHippocampus_B6J.h5ad",
+      "bytes": 507727595,
+      "retained_equivalent": "supplementary/8cube_tissues_fullinput_alpha07/h5ads/CortexHippocampus_B6J.h5ad"
+    },
+    {
+      "path": "supplementary/8cube_namefiltered_inputs/h5ads/Adrenal_B6J.json",
+      "bytes": 787,
+      "sha256": "f240b416ba85736a0a81494f0aca588302a83c4058463eed4c9bcebdf1004746"
+    },
+    {
+      "path": "supplementary/8cube_native_three_methods/.cache/matplotlib/fontlist-v390.json",
+      "bytes": 250363,
+      "sha256": "00e776f7df68cc21326d352d2998c2eff4e774d6912157f5ab27fc70545aa917"
+    },
+    {
+      "path": "scripts/screen_8cube_alphas.py",
+      "bytes": 21798,
+      "sha256": "251b729359c7499cb6308ed6878e52ba19ab08295d17875b33dd3c7791977903",
+      "replacement": "scripts/supplementary_helpers.py; scripts/subsample_alpha_benchmark.py"
+    },
+    {
+      "path": "scripts/screen_8cube_alphas.sh",
+      "bytes": 619,
+      "sha256": "f3f3e933f23661b7ba4e29b171d939519e56494bdc22f53f13e9f3169ea7ff2f",
+      "replacement": "scripts/supplementary_helpers.py; scripts/subsample_alpha_benchmark.py"
+    }
+  ]
+}

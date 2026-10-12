@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-12",
+  "scope": "Directory organization, environment creation, saved-result rendering and verification; no model fitting",
+  "protected_directories_untouched": [
+    "/home/nikki/covariance_geometry/SEP_2026",
+    "/home/nikki/celltype_compression_2",
+    "/home/nikki/cell_sieve_package"
+  ],
+  "active_figures_manifest": "figure_manifest.md",
+  "launcher": "scripts/paper.sh",
+  "conda_environment": "sp2026-paper",
+  "environment_prefix": "/home/nikki/miniconda3/envs/sp2026-paper",
+  "environment_yaml": "environments/benchmark.yml",
+  "python_lock": "environments/paper-requirements.lock.txt",
+  "relocations": [
+    {
+      "from": "figure_plan.md",
+      "to": "archive_notes/legacy_docs/figure_plan.md"
+    },
+    {
+      "from": "provenance_report.md",
+      "to": "archive_notes/legacy_docs/provenance_report.md"
+    },
+    {
+      "from": "cell_sieve_alpha_audit.csv",
+      "to": "metadata/cell_sieve_alpha_audit.csv"
+    }
+  ],
+  "archived_snapshots": [
+    "archive_notes/legacy_docs/figure_manifest_20261001.md",
+    "archive_notes/legacy_docs/cell_sieve_alpha_audit_before_organization.csv"
+  ],
+  "preservation": "All scientific inputs and result artifacts retained locally; raw results and superseded runs under results/ are Git-ignored.",
+  "checks": {
+    "environment_report": "metadata/environment_check.json",
+    "main_figures_report": "archive_notes/verification_report.json",
+    "supplementary_report": "results/supplementary/verification.json",
+    "supplementary_runs_verified": 900,
+    "fullinput_display_rows_verified": 255,
+    "syntax": "All scripts/*.py parsed and scripts/*.sh passed bash -n",
+    "render": "All main and supplementary figures rendered from saved results; GO table and marker figure exported separately",
+    "manuscript": "Seven central PDFs validated; hashes in results/manuscript/figure_sources.json"
+  },
+  "reproduction_limits": [
+    "Historical full-cortex L1 input checksum and original per-panel timings cannot be reconstructed by fresh ranking runs.",
+    "Original historical cortex-noise fitting producer is not fully preserved; saved outcomes and PCA are reproducible.",
+    "Original historical MERFISH recipe is missing; the current explicit five-fold refit is reproducible.",
+    "Input/result bundles, Gurobi license, local fonts and a TeX installation for manuscript compilation must be supplied separately."
+  ],
+  "canonical_directories": {
+    "figures": "figs",
+    "scripts": "scripts",
+    "results": "results"
+  },
+  "layout_manifest": "metadata/layout_migration.json"
+}

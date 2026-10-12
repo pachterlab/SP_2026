@@ -12,8 +12,12 @@ from build_fig2_panel40 import DATA, DEST, sha256
 def main():
     genes = ['Npas3', 'Flt1']
     selected = (DEST / 'selected_genes.txt').read_text().splitlines()
-    if not set(genes).issubset(selected):
-        raise ValueError('Violin genes must be selected in panel B')
+    # Retain the established examples where selected; fill missing examples by
+    # largest absolute native coefficient (deterministic, selected genes only).
+    retained = [gene for gene in genes if gene in selected]
+    coefficients = pd.read_csv(DEST / 'heatmaps/model_coefficients_by_celltype.csv', index_col=0)
+    ranked = coefficients.abs().max(axis=0).sort_values(ascending=False, kind='stable').index
+    genes = (retained + [gene for gene in ranked if gene not in retained])[:2]
     adata = ad.read_h5ad(DATA, backed='r')
     expression = adata[:, genes].to_memory().X
     if sparse.issparse(expression):
@@ -31,8 +35,17 @@ def main():
     dest = DEST / 'violins'
     dest.mkdir(exist_ok=True)
     frame.to_csv(dest / 'expression_by_cell.csv.gz')
+    summaries = []
+    for gene in genes:
+        for celltype, group in frame.groupby('celltype'):
+            values = group[gene]
+            summaries.append({'gene': gene, 'celltype': celltype, 'n_cells': len(group),
+                              'mean': values.mean(), 'median': values.median(),
+                              'fraction_positive': (values > 0).mean()})
+    pd.DataFrame(summaries).to_csv(dest / 'gene_celltype_summary.csv', index=False)
     provenance = {
         'expression_source': str(DATA), 'expression_source_sha256': sha256(DATA),
+        'selection_rule': 'Retain Npas3/Flt1 when selected; fill from selected genes ranked by maximum absolute native coefficient',
         'genes': genes, 'n_cells': len(frame), 'n_celltypes': frame.celltype.nunique(),
         'values': 'Original AnnData X, no additional transformation or subsampling',
         'validation': 'Cell-type means reproduce saved Figure 2 A means (atol=1e-10)',
